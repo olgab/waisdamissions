@@ -1,0 +1,12 @@
+<persistence>
+	<persistence-unit name="nl.waisda" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>nl.waisda.domain.User</class>
+		<class>nl.waisda.domain.Gender</class>
+		<class>nl.waisda.domain.Video</class>
+		<class>nl.waisda.domain.Game</class>
+		<class>nl.waisda.domain.TagEntry</class>
+		<class>nl.waisda.domain.ResetPassword</class>
+		<class>nl.waisda.domain.Participant</class>
+	</persistence-unit>
+</persistence>

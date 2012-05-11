@@ -1,0 +1,8 @@
+<Context>
+
+	<Transaction factory="bitronix.tm.BitronixUserTransactionObjectFactory" />
+
+    <Resource name="jdbc/pooledDataSource" auth="Container" type="javax.sql.DataSource"
+        factory="bitronix.tm.resource.ResourceObjectFactory" uniqueName="pooledDataSource" />
+
+</Context>

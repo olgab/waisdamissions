@@ -1,0 +1,30 @@
+/*!
+ * Bootstrap Responsive v2.0.3
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+
+/* Responsive.css
+	 For phone and tablet devices
+	 -------------------------------------------------------------
+
+	 RESPONSIVE CLASSES */
+
+@import "responsive-utilities.css";
+
+/* MEDIA QUERIES
+	 ------------------ */
+
+/* Phones to portrait tablets and narrow desktops */
+@import "responsive-767px-max.css";
+
+/* Tablets to regular desktops */
+@import "responsive-768px-979px.css";
+
+/* Large desktops */
+@import "responsive-1200px-min.css";

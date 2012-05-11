@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+<tlibversion>1.0</tlibversion>
+<jspversion>1.1</jspversion>
+<shortname>nf</shortname>
+<info>Sample taglib for Substr operation</info>
+<uri>http://viralpatel.net/blogs/jsp/taglib/substr</uri>
+<tag>
+    <name>format</name>
+    <tagclass>nl.waisda.tags.FormatOurNumber</tagclass>
+    <info>Nederlandse format voor nummers</info>
+    <attribute>
+      <name>number</name>	
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+  </attribute>
+</tag>
+</taglib>

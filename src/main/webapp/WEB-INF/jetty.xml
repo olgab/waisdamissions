@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
+<Configure id="Server" class="org.mortbay.jetty.Server">
+    
+	<Call name="getConfiguration" class="bitronix.tm.TransactionManagerServices">
+	  <Set name="serverId">jetty-btm-node0</Set>
+	  <Set name="defaultTransactionTimeout">900</Set>
+	  <Set name="logPart1Filename"><SystemProperty name="jetty.home" default="." />/work/btm1.tlog</Set>
+	  <Set name="logPart2Filename"><SystemProperty name="jetty.home" default="." />/work/btm2.tlog</Set>
+	</Call>
+
+	<Call name="addLifeCycle">
+	  <Arg>
+	    <New class="bitronix.tm.integration.jetty6.BTMLifeCycle"/>
+	  </Arg>
+	</Call>
+	
+	<New class="org.mortbay.jetty.plus.naming.Resource">
+	  <Arg>javax.transaction.TransactionManager</Arg>
+	  <Arg>
+	    <Call name="getTransactionManager" class="bitronix.tm.TransactionManagerServices" />
+	  </Arg>
+	</New>
+
+	<New class="org.mortbay.jetty.plus.naming.Transaction">
+	  <Arg>
+	    <Call name="getTransactionManager" class="bitronix.tm.TransactionManagerServices" />
+	  </Arg>
+	</New>
+	
+	<New id="pooledDataSource" class="org.mortbay.jetty.plus.naming.Resource">
+	  <Arg>jdbc/pooledDataSource</Arg>
+	  <Arg>
+	    <New class="bitronix.tm.resource.jdbc.PoolingDataSource">
+	      <Set name="uniqueName">pooledDataSource</Set>
+          <Set name="className">com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</Set>
+          <Set name="minPoolSize">0</Set>
+          <Set name="maxPoolSize">50</Set>
+          <Set name="allowLocalTransactions">true</Set>
+          <Get name="driverProperties">
+             <Put name="user">waisda</Put>
+             <Put name="password">waisda</Put>
+             <Put name="url">jdbc:mysql://localhost:3306/waisda?characterEncoding=UTF-8&amp;useUnicode=true</Put>
+ 		  </Get>
+          <Call name="init" />
+	    </New>
+	  </Arg>
+	</New>
+	
+	
+</Configure>

@@ -1,0 +1,151 @@
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.pos-top {
+  position: absolute;
+  top: 0;
+}
+.pos-bottom {
+  position: absolute;
+  bottom: 0;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.outside {
+  position: absolute;
+  left: -9999em;
+}
+.clear-both {
+  clear: both;
+}
+.cf {
+  *zoom: 1;
+  *zoom: 1;
+}
+.cf:before,
+.cf:after {
+  display: table;
+  content: "";
+}
+.cf:after {
+  clear: both;
+}
+.cf:before,
+.cf:after {
+  display: table;
+  content: "";
+}
+.cf:after {
+  clear: both;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.v-align-top {
+  vertical-align: top;
+}
+.v-align-middle {
+  vertical-align: middle;
+}
+.v-align-bottom {
+  vertical-align: bottom;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.pretty-link {
+  text-decoration: none;
+}
+.spaced {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+.spaced-ext {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+.spaced-min {
+  padding-bottom: 9px;
+}
+.spaced-top {
+  padding-top: 18px;
+}
+.spaced-bottom {
+  margin-bottom: 18px;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.box-inner {
+  padding: 3px 9px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  *behavior: url(/static/script/boxsizing.htc);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  *behavior: url(/static/script/boxsizing.htc);
+}
+.fixed-high {
+  min-height: 22em;
+  max-height: 22em;
+}
+.fixed-low {
+  min-height: 15em;
+  max-height: 15em;
+}
+.auto-size {
+  width: auto;
+  height: auto;
+}
+.reserved-space {
+  min-height: 1.25em;
+}
+img.bordered {
+  border: 1px solid #999999;
+}
+.scroll-box {
+  overflow-y: auto;
+}
+.scroll-box.bordered {
+  border-top: 1px solid #cccccc;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.invisible {
+  visibility: hidden;
+}
+.reset {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+.compact {
+  line-height: 1.0em;
+}

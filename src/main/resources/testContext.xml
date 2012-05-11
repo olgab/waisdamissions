@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:util="http://www.springframework.org/schema/util"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:tx="http://www.springframework.org/schema/tx"
+  xmlns:mvc="http://www.springframework.org/schema/mvc"
+  xmlns:jee="http://www.springframework.org/schema/jee"
+  xsi:schemaLocation="
+     http://www.springframework.org/schema/beans 
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     http://www.springframework.org/schema/tx
+     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+     http://www.springframework.org/schema/aop 
+     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+     http://www.springframework.org/schema/util
+     http://www.springframework.org/schema/util/spring-util-3.0.xsd
+     http://www.springframework.org/schema/context
+     http://www.springframework.org/schema/context/spring-context-3.0.xsd
+     http://www.springframework.org/schema/mvc
+     http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+     http://www.springframework.org/schema/jee
+     http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+     ">
+     
+     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driver}"/>
+		<property name="url" value="${jdbc.test.url}"/>
+		<property name="username" value="${jdbc.test.username}"/>
+		<property name="password" value="${jdbc.test.password}"/>
+	</bean>
+	
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		  	<property name="persistenceXmlLocation" value="${jpa.test.persistenceXmlLocation}"/>
+			<property name="persistenceUnitName" value="${jpa.persistenceUnitName}"/>
+			<property name="dataSource" ref="dataSource"/>
+			<property name="jpaVendorAdapter" ref="jpaAdapter"/>
+			<property name="jpaProperties">
+				<props>
+			      <prop key="hibernate.archive.autodetection">class, hbm</prop>
+			      <prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+			      <prop key="hibernate.show_sql">${jpa.showSql}</prop>
+			      <prop key="hibernate.format_sql">${jpa.formatSql}</prop>
+			      <prop key="hibernate.connection.driver_class">${jdbc.driver}</prop>
+			      <prop key="hibernate.connection.url">${jdbc.test.url}</prop>
+			      <prop key="hibernate.dialect">${jdbc.dialect}</prop>
+			      <prop key="hibernate.connection.username">${jdbc.test.username}</prop>
+			      <prop key="hibernate.connection.password">${jdbc.test.password}</prop>
+			    </props>
+			</property>
+		</bean>
+	
+     <import resource="baseContext.xml"/>
+     
+     
+	
+</beans>

@@ -1,0 +1,490 @@
+// ------- COMPONENTS
+
+// Import necessary stuff
+@import "variables";
+@import "mixins";
+
+// Default page layout
+// -------------------
+
+/*
+	
+	-----------------------------
+		.brand-marker
+	-----------------------------
+	
+		header.site-header
+	
+	-----------------------------
+	
+		section.main
+	
+	-----------------------------
+	
+		footer.site-footer
+	
+	-----------------------------
+
+ */
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+.brand-marker {
+	height:30px;
+	overflow:hidden;
+	padding:2px 0 4px 0;
+	background-color:@black;
+	p { 
+		line-height:30px;
+		color:@grayLight;
+		a {
+			img { 
+				vertical-align:top; 
+			}
+		}
+	}
+	.stats {
+		strong {
+			color:@white;
+		}
+	}
+	.clearfix();
+}
+
+header.site-header {
+	background-color:@grayLighter;
+	margin:0 0 @baseLineHeight 0;
+	padding:10px 0;
+	.stats{
+		position:absolute;
+		top:50%;
+		margin-top:-9px;
+		text-align:center;
+		p { 
+			font-size:18px;
+			color:@grayDark;
+			strong{
+				color:@black;
+			}
+		}
+	}
+	.online {
+		position:absolute;
+		bottom:0;
+		right:0;
+		padding:0;
+		margin:0;
+	}
+	.clearfix();
+}
+section.main {
+	margin-bottom: 172px;
+}
+.site-footer {
+	padding-top:10px;
+	background-color:@grayLighter;
+	color:@grayDark;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	a {
+		font-weight:bold;
+	}
+}
+
+
+// ------- BOX (.rich, .plain, .media, .channel, .personal)
+.box {
+	display:block;
+	border:1px solid @grayLighter;
+	.box-sizing(border-box); 
+	&:hover {
+		text-decoration:none;
+	}
+	header {
+		color:@grayDark;
+		padding:8px 9px 10px 9px;
+		border-bottom:1px solid @grayLighter;
+		&.extended {
+			* {
+				line-height:36px;
+			}
+			.small {
+				line-height:0;
+				padding-top:10px;
+				height:26px;
+				.middle-block();
+				strong { display:block;}
+			}
+		}
+		&.rich {
+			background-color:@grayLighter;
+		}
+		&.highlight {
+			#translucent > .background(@orange, 0.25);
+		}
+		.board {
+			background-color:@grayDark;
+			color:@white;
+			padding:1px 10px;
+			margin:0;
+		}
+		.clearfix();
+	}
+	section {
+		padding:9px;
+	}
+	footer {
+		padding:9px;
+		border-top:1px solid @grayLighter;
+	}
+	&.rich {
+		border:none;
+		background-color:@grayLighter;
+	}
+	&.pretty {
+		.border-radius(5px);
+		.box-shadow(3px 3px 5px #888);
+	}
+	&.clean {
+		border:none;
+		padding:10px;
+	}
+	&.personal {
+		border:none;
+		padding:10px;
+		background-color: #FFF;
+		a {
+			text-decoration:none;
+		}
+		img {
+			margin-right: 10px;
+			width: 72px;
+		}
+		&.blow-up {
+			padding:0;
+			border:1px solid @grayLighter;
+			.box-inner { padding:9px; }
+			img { width:120px; }
+			h2 {
+				line-height:120px;
+			}
+			.h1 { 
+				font-size:48px;
+				font-weight:bold;
+				line-height:32px;
+				.small {
+					display:block;
+					font-weight:normal;
+				}
+			}
+		}
+	}
+	.sub-header {
+		padding:8px 9px 10px 9px;
+		color:@grayDark;
+		&.rich {
+			background-color:@grayLighter;
+		}
+	}
+	.clearfix();
+}
+// ------- CHANNEL
+.channels {
+	margin-bottom:@baseLineHeight;
+}
+.channel {	
+	padding-bottom:9px;
+	& * {
+		padding:0 9px;
+	}
+	.img{
+		& * { 
+			padding:0; 
+		}
+		padding:0;
+		margin-bottom: 4px;
+		position:relative;
+		img {
+			width:100%;
+		}
+		.overlay {
+			position:absolute;
+			&.trigger {
+				width:50px;
+				height:50px;
+				left:50%;
+				top:50%;
+				margin:-25px 0 0 -25px;
+				background:transparent url(/static/img/play-button-overlay.png) 0 0 no-repeat;
+			}
+		}
+	}
+	h3 {
+		line-height:24px;
+		.text-overflow();
+	}
+}
+
+// ------- ORDER
+.order {
+		margin-top:@baseLineHeight;
+		padding:20px 9px 20px 9px;
+		position:relative;
+		.index {
+			border:3px solid @grayLighter;
+			background-color:@gray;
+			.border-radius(20px);
+			width:30px;
+			height:30px;
+			color:@white;
+			font-size:18px;
+			font-weight:bold;
+			line-height:28px;
+			position:absolute;
+			top:-15px;
+			left:50%;
+			margin:0 0 0 -18px;
+			text-align:center;
+		}
+}
+
+// ------- CHART-ENTRY
+
+.chart-entry {
+	vertical-align:middle;
+	padding:5px 9px 5px 0;
+	height:30px;
+	.index {
+		display:block;	
+		height:40px;
+		width:40px;
+		margin:-5px 5px -5px 0;
+		background-color:@grayLight;
+		font-size:24px;
+		font-weight:bold;
+		line-height:38px;
+		text-align:center;		
+	}
+	a {
+		.index{ 
+			background-color:transparent;
+		}
+		&:hover,
+		&:hover * {
+			text-decoration:none;
+		}
+	}
+	&.highlight {
+		.index {
+			background-color:@linkColor;
+			color:@white;
+		}
+	}
+	img {
+		margin-right:10px;
+	}
+	& + .chart-entry {
+		border-top:1px solid @grayLighter;
+	}
+	&.extended {
+		height:40px;
+		line-height:0;
+		.index {
+			height:50px;
+		}
+		small { 
+			font-size:11px;
+			color:@gray;
+			padding-left:42px;	
+		}
+	}
+	.score {
+		line-height:30px;
+		font-weight:bold;
+	}
+}
+.horizontal {
+	.chart-entry {
+		& + .chart-entry { 
+			border-top:none;
+		}
+	}
+}
+
+// ------- TAGCLOUD
+.tagcloud {
+	padding:0;
+	margin:@baseLineHeight/2 0;
+	.clearfix();
+}
+.tag-entry{ 
+	float:left;
+	padding:0 10px;
+	line-height:40px;
+	&.size-1 {
+		font-size:12px;
+	}
+	&.size-2 {
+		font-size:15px;
+	}
+	&.size-3 {
+		font-size:18px;
+	}
+	&.size-4 {
+		font-size:21px;
+	}
+	&.size-5 {
+		font-size:24px;
+	}
+}
+
+// ------- GAME-CANVAS
+
+.input-mega-xxl {
+	font-size:18px;
+	margin-bottom:0px;
+	width:100%;
+	height:100%;
+	.box-sizing(border-box);
+}
+
+.compact-overlay {
+	position:absolute;
+	bottom:0;
+	left:0;
+	height:45px;
+	background-color:@white;
+	.opacity(50);
+ 	* {
+		display:none;
+		height:auto;
+	}
+	.timer-intro {
+		display:block;
+		margin-left:100%;
+		white-space:nowrap;
+	}
+}
+
+.video {
+	background-color:@black;
+	object { .center-block(); }
+}
+
+.timer-intro {
+	small {
+		display:block;
+		width:100%;
+		text-align:center;
+	}
+	strong {
+		display:block;
+		width:100%;
+		text-align:center;
+		font-size:48px;
+		padding:@baseLineHeight 0;
+	}
+}
+
+// ------- TAGLIST
+.tag-list{
+	.tag {
+		border-top:1px solid @grayLighter;
+		padding:5px 10px;
+		.points,
+		.icon {
+			float:right;
+			margin-left:5px;
+		}
+		.points {
+			font-weight:bold;
+			color:@grayDark;
+		}
+		.matching {
+			clear:both;
+			display:block;
+		}
+	}
+}
+
+// ------- HELP
+.help {
+	font-size:12px;
+	line-height:16px;
+	display:inline-block;
+	border:1px solid @grayDark;
+	background:@grayLighter;
+	color:@grayDark;
+	font-weight:bold;
+	padding:0 5px;
+	.border-radius(2px);
+}
+.tooltip {
+	position:absolute;
+	padding:9px;
+	.border-radius(2px);
+	color:@white;
+	border:1px solid @grayDarker;
+	#translucent > .background(@grayDarker, 0.9);
+	.box-shadow(0px 0px 5px @grayLight);
+	max-width:240px;
+}
+
+// ------- PIONEERS MATCHES
+
+.pull-out-right {
+	position:absolute;
+	right:20px;
+	top:-37px;
+}
+// ------- FORMS
+.form-shift {
+	margin-left:160px;
+}
+
+// ------- GAME QUEUE
+.game-queue {
+	background-color:@white;
+	header {
+		&.rich {
+			background-color:@gray;
+			color:@white;
+			.small,
+			small {
+				color:@grayLighter;
+			}
+		}
+	}
+	table {
+		* { cursor:pointer; }
+		h4 {
+			white-space:nowrap;
+			line-height:24px;
+			.text-overflow();
+			width:160px;
+		}
+		.time-remaining {
+			line-height:24px;
+		}
+	}
+	&.dynamic {
+		position:fixed;
+		top:-9999px;
+		right:5px;
+		z-index:9999;
+		overflow:hidden;
+		.box-shadow(0px 0px 5px @gray);
+		&.attention {
+			.box-shadow(0px 0px 5px @orange);
+		}
+	}
+}
+
+// ------- STACK
+.stack + .stack { 
+	margin-top:@baseLineHeight;	
+}

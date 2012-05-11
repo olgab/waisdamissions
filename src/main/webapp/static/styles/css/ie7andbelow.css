@@ -1,0 +1,17 @@
+.row,
+.site-footer {
+  overflow: hidden;
+  clear: both;
+  margin-top: 18px;
+}
+html {
+  position: static;
+  min-height: none;
+}
+section.main {
+  margin-bottom: 0;
+}
+.site-footer {
+  margin-top: 10px;
+  position: static;
+}

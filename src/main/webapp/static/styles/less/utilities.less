@@ -1,0 +1,160 @@
+// UTILITY CLASSES
+// ---------------
+
+// Import necessary stuff
+@import "variables";
+@import "mixins";
+
+// Quick floats
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+
+//Quick positioning
+.pos-top {
+	position:absolute;
+	top:0;
+}
+.pos-bottom {
+	position:absolute;
+	bottom:0;
+}
+.relative {
+	position:relative;
+}
+.absolute {
+	position:absolute;
+}
+.outside {
+	position:absolute;
+	left:-9999em;
+}
+
+// clear floats
+.clear-both {
+	clear:both;
+}
+.cf {
+	.clearfix();
+}
+
+//text-align
+.text-right {
+	text-align:right;
+}
+.text-left {
+	text-align:left;
+}
+
+//vertical-align
+.v-align-top {
+	vertical-align:top;
+}
+.v-align-middle {
+	vertical-align:middle;
+}
+.v-align-bottom {
+	vertical-align:bottom;
+}
+
+// Toggling content
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+// Links
+.pretty-link {
+	text-decoration:none;
+}
+
+// Spacers
+.spaced { 
+	margin-top:@baseLineHeight;
+	margin-bottom:@baseLineHeight;
+}
+.spaced-ext {
+	padding-top:@baseLineHeight;
+	padding-bottom:@baseLineHeight;
+}
+.spaced-min {
+	padding-bottom:@baseLineHeight/2;
+}
+.spaced-top {
+	padding-top:@baseLineHeight;
+}
+.spaced-bottom {
+	margin-bottom:@baseLineHeight;
+}
+.center {
+	.center-block();
+}
+.box-inner {
+	padding:3px 9px;
+	.box-sizing(border-box);
+}
+
+// SPECIFIC HEIGHT ADJUSTMENTS
+.fixed-high{
+	min-height: 22em;
+	max-height: 22em;
+}
+.fixed-low{
+	min-height: 15em;
+	max-height: 15em;
+}
+
+.auto-size {
+	width:auto;
+	height:auto;
+}
+
+// RESERVED SPACE FOR ADDTHIS-BAR
+.reserved-space {
+	min-height:1.25em;
+}
+
+// ---------
+img {
+	&.bordered {
+		border:1px solid @gray;
+	}
+}
+
+// SCROLLABLE
+.scroll-box {
+	overflow-y:auto;
+	&.bordered {
+		border-top:1px solid @grayLight;
+	}
+}
+// CSS image replacement
+// -------------------------
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+// Visibility
+.invisible {
+  visibility: hidden;
+}
+
+// reset : clear paddings, margins, borders etc...
+.reset {
+	margin:0 !important;
+	padding:0 !important;
+	border:none !important;
+}
+.compact {
+	line-height:1.0em;
+}
