@@ -38,14 +38,16 @@ public class Video {
 	private PlayerType playerType;
 
 	@Basic
-	private int fragmentID;
+	private Integer fragmentID;
 
 	/** Start time within episode, in ms. */
 	@Basic
-	private int startTime;
+	private Integer startTime;
 
 	/** Fragmentenrubriek zoals in MBH dump. */
-	private int sectionNid;
+	private Integer sectionNid;
+
+	private String sourceUrl;
 
 	public int getId() {
 		return id;
@@ -75,16 +77,20 @@ public class Video {
 		return playerType;
 	}
 
-	public int getFragmentID() {
+	public Integer getFragmentID() {
 		return fragmentID;
 	}
 
-	public int getStartTime() {
+	public Integer getStartTime() {
 		return startTime;
 	}
 
-	public int getSectionNid() {
+	public Integer getSectionNid() {
 		return sectionNid;
+	}
+
+	public String getSourceUrl() {
+		return sourceUrl;
 	}
 
 	public String getPrettyDuration() {

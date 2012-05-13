@@ -78,7 +78,27 @@
 
 <script type="text/javascript">
 	jQuery(function() {
-		window.game = new Game(${game.id}, ${game.video.fragmentID}, ${game.video.startTime}, ${game.video.duration}, ${game.elapsed});
+		<c:choose>
+			<c:when test="${game.video.playerType == 'NPO'}">
+				var video = {
+						playerType : 'NPO',
+						fragmentId : ${game.video.fragmentID},
+						startTimeWithinEpisode : ${game.video.startTime},
+						duration : ${game.video.duration}
+					};
+			</c:when>
+			<c:when test="${game.video.playerType == 'JW'}">
+				var video = {
+						playerType : 'JW',
+						sourceUrl : '${game.video.sourceUrl}',
+						imageUrl : '${game.video.imageUrl}'
+					};
+			</c:when>
+			<c:otherwise>
+			var video = null;
+			</c:otherwise>
+		</c:choose>
+		window.game = new Game(${game.id}, video, ${game.elapsed});
 	});
 </script>
 

@@ -109,3 +109,64 @@ var ugCallbackFunction = function(eventType, args) {
 var onSilverlightLoad = function() {
 	game.initVideoPlayer();
 };
+
+var JWPlayer = base2.Base.extend({
+	constructor : function(elementId, imageUrl, sourceUrl) {
+		this.evtHandles = [];
+		this.elementId = elementId;
+
+		var self = this;
+
+		this.player = jwplayer(elementId).setup({
+			flashplayer: '/static/mediaplayer-5.9/player.swf',
+			file: sourceUrl,
+			image: imageUrl,
+			height: 351,
+			width: 618,
+			events: {
+				onComplete: function() { self.dispatchEvents("fragmentEnd"); },
+				onTime: function() {
+					var elapsed = Math.ceil(self.player.getPosition() * 1000);
+					var duration = Math.ceil(self.player.getDuration() * 1000);
+
+					// check whether the videoplayer initialized completely
+					if (duration != 0) {
+						self.dispatchEvents("tick", [ elapsed, duration ]);
+					}
+				}
+			}
+		});
+	},
+
+	getElapsed : function() {
+		return Math.ceil(this.player.getPosition() * 1000);
+	},
+
+	addEvent : function(evtName, handle) {
+		this.evtHandles.push({
+			evtName : evtName,
+			handle : handle
+		});
+	},
+
+	dispatchEvents : function(evtName, params) {
+		// loop through all event handles, match event names and fire
+		for ( var i = 0; i < this.evtHandles.length; i++) {
+			if (this.evtHandles[i].evtName == evtName) {
+				this.evtHandles[i].handle.apply(this, params);
+			}
+		}
+	},
+
+	moveTo : function(sec) {
+		this.player.seek(sec);
+	},
+
+	play : function() {
+		this.player.play(true);
+	},
+
+	stop : function() {
+		this.player.pause(true);
+	}
+});

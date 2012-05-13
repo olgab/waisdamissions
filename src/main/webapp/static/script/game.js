@@ -10,24 +10,32 @@ var Game = base2.Base.extend({
 	beenPlaying: false,
 	lastKnownUserId: CurrentUser.id,
 	
-	constructor: function(gameId, fragmentID, startTimeWithinEpisode, duration, startTime) {
+//	constructor: function(gameId, fragmentID, startTimeWithinEpisode, duration, startTime) {
+	constructor: function(gameId, video, startTime) {
 		this.gameId = gameId;
 		this.startTime = startTime;
-		this.duration = duration;
+		this.duration = video.duration;
 		this.loadTime = new Date().getTime();
 		
 		this.history = new TaggingHistory();
 		this.scoreboard = new Scoreboard();
 
-		var playerArgs = {
-			fragmentID: fragmentID,
-			startTimeWithinEpisode: startTimeWithinEpisode,
-			duration: duration,
-			startTime: startTime
-		};
-		this.videoplayer = new NPOPlayer("video", playerArgs);
-		this.updateIntervalId = setTimeout(jQuery.proxy(this.update, this), 1000);
-		this.initVideoPlayer();
+		if (video.playerType == 'NPO') {
+			var playerArgs = {
+				fragmentID: video.fragmentId,
+				startTimeWithinEpisode: video.startTimeWithinEpisode,
+				duration: video.duration,
+				startTime: startTime
+			};
+			this.videoplayer = new NPOPlayer('video', playerArgs);
+		} else if (video.playerType == 'JW') {
+			this.videoplayer = new JWPlayer('video', video.imageUrl, video.sourceUrl);
+		}
+
+		if (this.videoplayer != null) {
+			this.updateIntervalId = setTimeout(jQuery.proxy(this.update, this), 1000);
+			this.initVideoPlayer();
+		}
 	},
 	
 	initVideoPlayer: function()
@@ -211,7 +219,6 @@ var Scoreboard = base2.Base.extend({
 				el = jQuery('<li/>', { 'id' : elId, 'class' : you ? 'chart-entry highlight' : 'chart-entry' });
 				el.append(jQuery('<span/>', { 'class' : 'index pull-left' }));
 				var avatarSpan = jQuery('<span/>', { 'class' : 'avatar' });
-				console.log(player.smallAvatarUrl);
 				avatarSpan.append(jQuery('<img/>', { src : player.smallAvatarUrl }));
 				el.append(avatarSpan);
 				el.append(player.name ? player.name : 'Anoniempje');
