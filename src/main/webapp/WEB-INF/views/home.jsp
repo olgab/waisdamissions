@@ -87,7 +87,7 @@
 		<div class="box span4 col leading">
 
 			<header class="header rich"><h2 class="h3 reset">Populairste tags <small>afgelopen 7 dagen</small></h2></header>
-			<section class="reset">
+			<section class="reset fixed-low">
 				<ul class="tagcloud unstyled">
 					<c:forEach items="${globalStats.tagCloud}" var="tag">
 						<li class="tag-entry size-${tag.relativeSize}"><a href="/tag/${tag.normalizedTag}">${tag.normalizedTag}</a></li>
