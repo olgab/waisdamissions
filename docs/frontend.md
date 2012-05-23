@@ -55,7 +55,7 @@ Components that can be used generically
 * `.tooltip`
 
 Components specific for gamepage:
-* '.input-mega-xxl`
+* `.input-mega-xxl`
 * `.compact-overlay`
 * `.video`
 * `.timer-intro`
