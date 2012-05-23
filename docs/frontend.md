@@ -38,14 +38,20 @@ The styling throughout Waisda?® is based on the principles of Object Oriented C
 This stylesheet contains all style-definitions for components that are added on top of the Bootstrap styling specifically for Waisda?®. The most important addition is the introduction of the .box class. Because most components on the Waisda?® site will appear as box-like. containers of content there is an extensive set of styles to s presenttyle and shape these. See page `/static/box-component.html` for a full overview of the options. 
 An overview of the other components, their usage and where-to-find them:
 
-Main page-layout
+Main page-layout (used on every page)
 * `.brand-marker`
+The bar on top on every page containing the Waisda?-logo
 * `header.site-header`
+The main header containing the logo and login/register links
 * `section.main`
+Main content section
 * `.site-footer`
+The main footer containing links to static pages and the sponsors/supporters
 
 Components that can be used generically
 * `.channel`
+_Usage:_ Game entry showing a screencap, title and details
+_Used on:_ Home- and tagpage
 * `.order`
 * `.chart-entry`
 * `.tag-entry`
