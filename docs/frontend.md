@@ -77,9 +77,9 @@ _example(s):_ Recappage
 Components specific for gamepage:
 Following components are only used on and specifically styled for the gamepage
 * `.input-mega-xxl`
-The big <input type='text'> below the video
+The big `<input type='text'>` below the video
 * `.compact-overlay`
-Class is added to '#vid-overlay-screen' by javascript. Used to re-style the component so it appears as a white transparent overlay on top of input. 
+Class is added to `#vid-overlay-screen` by javascript. Used to re-style the component so it appears as a white transparent overlay on top of input. 
 Shown when video is initializing so users won't be able to enter text 
 * `.video`
 The container for the video-object.
