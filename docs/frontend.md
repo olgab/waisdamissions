@@ -40,12 +40,16 @@ An overview of the other components, their usage and where-to-find them:
 
 Main page-layout (used on every page)
 * `.brand-marker`
+
 The bar on top on every page containing the Waisda?-logo
 * `header.site-header`
+
 The main header containing the logo and login/register links
 * `section.main`
+
 Main content section
 * `.site-footer`
+
 The main footer containing links to static pages and the sponsors/supporters
 
 Components that can be used generically
