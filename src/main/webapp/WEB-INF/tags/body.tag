@@ -49,7 +49,7 @@
 				</c:if>
 				
 				<c:if test="${user != null && user.playerBarVisible}">
-					<div class="span3 box personal col">
+					<div class="span3 box media col">
 						<tt:profileLink anonymous="${user.anonymous}" id="${user.id}">
 							<c:if test="${user.anonymous}">
 								<img src="${user.avatarUrl}" class="pull-left" />
@@ -64,7 +64,7 @@
 						</tt:profileLink>
 					</div>
 					<c:if test="${user != null && user.countNewPioneerMatches > 0}">
-						<div class="span3 box personal col">
+						<div class="span3 box media col">
 							<a href="/profiel/${user.id}#pionier" class="unstyled">
 								<img src="/static/img/match-pioneer-xl.png" class="pull-left" />
 								<p class="reset">toelichting &raquo;</p>	

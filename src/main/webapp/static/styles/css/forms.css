@@ -838,6 +838,9 @@ select:focus:required:invalid:focus {
 .control-group {
   margin-bottom: 9px;
 }
+.form-shift {
+  margin-left: 160px;
+}
 legend + .control-group {
   margin-top: 18px;
   -webkit-margin-top-collapse: separate;

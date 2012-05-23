@@ -23,7 +23,7 @@
 </c:choose>
 <div class="row equal-cols">
 
-	<div class="box personal blow-up span4 col">
+	<div class="box media blow-up span4 col">
 		<div class="box-inner">
 			<img src="${profile.user.avatarUrl}" class="pull-left" />
 			<h2 class="pull-left h3"><c:out value="${profile.user.name}"/></h2>	

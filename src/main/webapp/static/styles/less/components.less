@@ -96,7 +96,7 @@ section.main {
 }
 
 
-// ------- BOX (.rich, .plain, .media, .channel, .personal)
+// ------- BOX (.rich, .extended, .highlight)
 .box {
 	display:block;
 	border:1px solid @grayLighter;
@@ -136,6 +136,9 @@ section.main {
 	}
 	section {
 		padding:9px;
+		&.row-fluid{ 
+			padding:0;
+		}
 	}
 	footer {
 		padding:9px;
@@ -153,7 +156,7 @@ section.main {
 		border:none;
 		padding:10px;
 	}
-	&.personal {
+	&.media {
 		border:none;
 		padding:10px;
 		background-color: #FFF;
@@ -441,10 +444,7 @@ section.main {
 	right:20px;
 	top:-37px;
 }
-// ------- FORMS
-.form-shift {
-	margin-left:160px;
-}
+
 
 // ------- GAME QUEUE
 .game-queue {

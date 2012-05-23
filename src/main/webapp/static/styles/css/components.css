@@ -187,6 +187,9 @@ section.main {
 .box section {
   padding: 9px;
 }
+.box section.row-fluid {
+  padding: 0;
+}
 .box footer {
   padding: 9px;
   border-top: 1px solid #eeeeee;
@@ -213,37 +216,37 @@ section.main {
   border: none;
   padding: 10px;
 }
-.box.personal {
+.box.media {
   border: none;
   padding: 10px;
   background-color: #FFF;
 }
-.box.personal a {
+.box.media a {
   text-decoration: none;
 }
-.box.personal img {
+.box.media img {
   margin-right: 10px;
   width: 72px;
 }
-.box.personal.blow-up {
+.box.media.blow-up {
   padding: 0;
   border: 1px solid #eeeeee;
 }
-.box.personal.blow-up .box-inner {
+.box.media.blow-up .box-inner {
   padding: 9px;
 }
-.box.personal.blow-up img {
+.box.media.blow-up img {
   width: 120px;
 }
-.box.personal.blow-up h2 {
+.box.media.blow-up h2 {
   line-height: 120px;
 }
-.box.personal.blow-up .h1 {
+.box.media.blow-up .h1 {
   font-size: 48px;
   font-weight: bold;
   line-height: 32px;
 }
-.box.personal.blow-up .h1 .small {
+.box.media.blow-up .h1 .small {
   display: block;
   font-weight: normal;
 }
@@ -547,9 +550,6 @@ section.main {
   position: absolute;
   right: 20px;
   top: -37px;
-}
-.form-shift {
-  margin-left: 160px;
 }
 .game-queue {
   background-color: #ffffff;
