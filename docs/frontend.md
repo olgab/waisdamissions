@@ -35,7 +35,35 @@ The styling throughout Waisda?® is based on the principles of Object Oriented C
 
 ## Components.css
 
-This stylesheet contains all style-definitions for components that are added on top of the Bootstrap styling specifically for Waisda?®. The most important addition is the introduction of the .box class. Because most components on the Waisda?® site will appear as box-like. containers of content there is an extensive set of styles to s presenttyle and shape these. See page `/static/box-component.html` for a full overview of the options. An overview of other components, their usage and where-to-find them.
+This stylesheet contains all style-definitions for components that are added on top of the Bootstrap styling specifically for Waisda?®. The most important addition is the introduction of the .box class. Because most components on the Waisda?® site will appear as box-like. containers of content there is an extensive set of styles to s presenttyle and shape these. See page `/static/box-component.html` for a full overview of the options. 
+An overview of the other components, their usage and where-to-find them:
+
+Main page-layout
+* `.brand-marker`
+* `header.site-header`
+* `section.main`
+* `.site-footer`
+
+Components that can be used generically
+* `.channel`
+* `.order`
+* `.chart-entry`
+* `.tag-entry`
+* `.game-queue`
+* `.tag-list`
+* `.help`
+* `.tooltip`
+
+Components specific for gamepage:
+* '.input-mega-xxl`
+* `.compact-overlay`
+* `.video`
+* `.timer-intro`
+
+Components specific for profile-page
+* `.pull-out-right`
+* `.form-shift`
+
 
 ## Ids vs classes
 
