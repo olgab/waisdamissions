@@ -6,7 +6,7 @@ The front-end is based on the Twitter Bootstrap framework. This provides a flexi
 
 * less-files were removed. Compare the folder [/styles/less](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/styles/less) and the full list at the [twitter/bootstrap repository](https://github.com/twitter/bootstrap/tree/master/less "Twitter bootsrap repository") on github to see which components have been removed
 * almost all remaining .less files have been changed or extended. Most changes involve colors, margins, paddings, sizing
-* components.less has been added. This contains specific styling for Waisda?® on top of the bootstrap-files
+* components.less has been added. This contains specific styling for Waisda? on top of the bootstrap-files
 
 Less-files starting with the word ‘responsive-' contain specific styling in order to make your design act on different screen-sizes. Some changes were made to this files but it was not fully tested. The current version only has one fixed width. The responsive stylesheets are left to offer some examples of the grid-system. More information on how-to uses the styles for responsive design can be found in the section about [responsive layout](http://twitter.github.com/bootstrap/scaffolding.html#responsive "Bootstrap's responsive design") on the Bootstrap-site.
 
@@ -17,7 +17,7 @@ jQuery is a cross-browser JavaScript library designed to simplify the client-sid
 ##Less
 
 Less is a dynamic stylesheet language that extends CSS with dynamic behavior such as variables, mixins, operations and functions. For example colors and generic paddings and margins can be set from the variables.less file. From then on they can be imported and used in any other less-file.
-Less compiles to css. This can be done server-side or client-side by adding a javascript-file. For Waisda?® running less server-side is recommended. Because a lot of javascript-processes already run on the client. So running less client-side may slow-down page rendering.
+Less compiles to css. This can be done server-side or client-side by adding a javascript-file. For Waisda? running less server-side is recommended. Because a lot of javascript-processes already run on the client. So running less client-side may slow-down page rendering.
 Less-files are placed in the folder [/styles/less](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/styles/less). These are compiled to css in folder [/styles/css](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/styles/css/). The latter also contains a file called [styles.css](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/styles/css/styles.css). This is the only css file that is called from all pages. It contains the calls to all different stylesheets. More information and documentation can be found at [lesscss.org](lesscss.org).
 
 Note: because less is compiled server-side [styles.css](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/styles/css/styles.css) contains calls to .css files. When running less client-side this file should have the `.less` extension and contain calls to all other `.less` files.
@@ -37,7 +37,7 @@ The styling throughout Waisda? is based on the principles of Object Oriented CSS
 
 ## components.less
 
-This stylesheet contains all style-definitions for components that are added on top of the Bootstrap styling specifically for Waisda?®. The most important addition is the introduction of the .box class. Because most components on the Waisda?® site will appear as box-like. containers of content there is an extensive set of styles to s presenttyle and shape these. See page [/static/box-component.html](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/box-component.html) for a full overview of the options. 
+This [stylesheet](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/styles/less/components.less) contains all style-definitions for components that are added on top of the Bootstrap styling specifically for Waisda?®. The most important addition is the introduction of the .box class. Because most components on the Waisda?® site will appear as box-like. containers of content there is an extensive set of styles to s presenttyle and shape these. See page [/static/box-component.html](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/box-component.html) for a full overview of the options. 
 An overview of the other components, their usage and where-to-find them:
 
 __Main page-layout__ (appear on every page)
@@ -95,7 +95,7 @@ Pull out the icon in the header of the 'pioneer-matches'-component
 
 ## utilities.less
 
-This stylesheet is part of the bootstrap frame-work. It contains generic styles that can be used on every element to add quick specific style changes. For example changing an elements `float-property` to `left` or `right` by adding the class `.pull-left` or `pull-right`. This file has been extended with lots of classes for _positioning_, _alignment_, _spacing_ and _toggling visibility_. In _OOCSS_ it is prefered to add these generic classes instead of directly adding or changing style-properties for a specific component.
+This [stylesheet](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/styles/less/utilities.less) is part of the bootstrap frame-work. It contains generic styles that can be used on every element to add quick specific style changes. For example changing an elements `float-property` to `left` or `right` by adding the class `.pull-left` or `pull-right`. This file has been extended with lots of classes for _positioning_, _alignment_, _spacing_ and _toggling visibility_. In _OOCSS_ it is prefered to add these generic classes instead of directly adding or changing style-properties for a specific component.
 
 ## Id's vs classes
 
@@ -104,7 +104,7 @@ All id`s that are used in the html are hooks for javascript code. So please leav
 * `class="help"`
     this class will generate a styled tooltip for the element that will show/hide on mouseover/mouseout. The title attribute contains the text that will be shown in the tooltip.
 * `class="equal-cols"` together with `class="col"`
-    all elements with class="col" within a containing elements with class="equal-cols" will get the same height. This is handled by the JQuery plugin ‘jquery.equalheights.js` which can be found in the ‘/javascript/plugins` folder. The function is called from ‘global.js` as followed:
+    all elements with class="col" within a containing elements with class="equal-cols" will get the same height. This is handled by the JQuery plugin ‘jquery.equalheights.js` which can be found in the folder [/javascript/plugins](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/javascript/plugins). The function is called from [global.js](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/javascript/global.js) as followed:
 
     ```JavaScript
     $('.equal-cols').each(function(){
