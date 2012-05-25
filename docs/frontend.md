@@ -104,7 +104,7 @@ All id`s that are used in the html are hooks for javascript code. So please leav
 * `class="help"`
     this class will generate a styled tooltip for the element that will show/hide on mouseover/mouseout. The title attribute contains the text that will be shown in the tooltip.
 * `class="equal-cols"` together with `class="col"`
-    all elements with class="col" within a containing elements with class="equal-cols" will get the same height. This is handled by the JQuery plugin [jquery.equalheights.js](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/javascript/plugins/jquery.equalheights.js) which can be found in the folder [/javascript/plugins](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/javascript/plugins). The function is called from [global.js](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/javascript/global.js) as followed:
+    all elements with class="col" within a containing elements with class="equal-cols" will get the same height. This is handled by the JQuery plugin [jquery.equalheights.js](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/script/plugins/jquery.equalheights.js) which can be found in the folder [/script/plugins](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/script/plugins). The function is called from [global.js](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/script/global.js) as followed:
 
     ```JavaScript
     $('.equal-cols').each(function(){
