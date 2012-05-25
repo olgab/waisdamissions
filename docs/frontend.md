@@ -4,21 +4,23 @@
 
 The front-end is based on the Twitter Bootstrap framework. This provides a flexible and robust base for the Waisda?-project. Full documentation on this framework can be found at [twitter.github.com/bootstrap](http://twitter.github.com/bootstrap/ "Twitter Bootstrap"). Because the framework offers way much more than needed for this version some options were stripped. But as you wil go through this project you will still encounter some styles and settings not being used. Those were left in to offer more flexibilty from the start. In order to extend the ability to customize the stylesheets to one`s specific needs they were not generated from the [Bootstrap site](http://twitter.github.com/bootstrap/download.html "Customize and download twitter bootstrap"). But the original .less files were taken from the github repository and changed and adapted to the specific needs for this project. Changes that were made to the original less-folder:
 
-* less-files were removed. Compare the folder [/styles/less](/static/styles/less) and the full list at the [twitter/bootstrap repository](https://github.com/twitter/bootstrap/tree/master/less "Twitter bootsrap repository") on github to see which components have been removed
+* less-files were removed. Compare the folder [/styles/less](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/styles/less) and the full list at the [twitter/bootstrap repository](https://github.com/twitter/bootstrap/tree/master/less "Twitter bootsrap repository") on github to see which components have been removed
 * almost all remaining .less files have been changed or extended. Most changes involve colors, margins, paddings, sizing
 * components.less has been added. This contains specific styling for Waisda?® on top of the bootstrap-files
 
-Less-files starting with the word ‘responsive-` contain specific styling in order to make your design act on different screen-sizes. Some changes were made to this files but it was not fully tested. The current version only has one fixed width. The responsive stylesheets are left to offer some examples of the grid-system. More information on how-to uses the styles for responsive design can be found in the section about responsive layout on the Bootstrap-site.
+Less-files starting with the word ‘responsive-' contain specific styling in order to make your design act on different screen-sizes. Some changes were made to this files but it was not fully tested. The current version only has one fixed width. The responsive stylesheets are left to offer some examples of the grid-system. More information on how-to uses the styles for responsive design can be found in the section about [responsive layout](http://twitter.github.com/bootstrap/scaffolding.html#responsive "Bootstrap's responsive design") on the Bootstrap-site.
 
 ## jQuery
 
 jQuery is a cross-browser JavaScript library designed to simplify the client-side scripting of HTML. Twitter bootstrap offers the possibility to use javascript plugins. None of these are being implemented right now. But all javascript throughout the project makes use of the JQuery library.
-Less
+
+##Less
+
 Less is a dynamic stylesheet language that extends CSS with dynamic behavior such as variables, mixins, operations and functions. For example colors and generic paddings and margins can be set from the variables.less file. From then on they can be imported and used in any other less-file.
 Less compiles to css. This can be done server-side or client-side by adding a javascript-file. For Waisda?® running less server-side is recommended. Because a lot of javascript-processes already run on the client. So running less client-side may slow-down page rendering.
-Less-files are placed in the folder `/styles/less`. These are compiled to css in folder `/styles/css`. The latter also contains a file called `styles.css`. This is the only css file that is called from all pages. It contains the calls to all different stylesheets. More information and documentation can be found at [lesscss.org](lesscss.org).
+Less-files are placed in the folder [/styles/less](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/styles/less). These are compiled to css in folder [/styles/css](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/styles/css/). The latter also contains a file called [styles.css](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/styles/css/styles.css). This is the only css file that is called from all pages. It contains the calls to all different stylesheets. More information and documentation can be found at [lesscss.org](lesscss.org).
 
-Note: because less is compiled server-side `styles.css` contains calls to .css files. When running less client-side this file should have the `.less` extension and contain calls to all other `.less` files.
+Note: because less is compiled server-side [styles.css](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/styles/css/styles.css) contains calls to .css files. When running less client-side this file should have the `.less` extension and contain calls to all other `.less` files.
 
 ## Grid
 
