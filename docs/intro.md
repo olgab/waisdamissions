@@ -11,7 +11,7 @@ Waisda? Whitelabel is version of the website with a neutral visual style and a b
 This document is intended for programmers who would like to take the white-label version of Waisda? and customize it to their own needs. To get the most out of this document, the reader is expected to be familiar with the technologies used in this project:
 
 * The backend is written in the [Java programming language][java] using the [Spring framework][spring]. The views are written using [JSP][jsp].
-* The website is backed by a [MySQL][mysql] database. The code binds to the database using the [Java Persistence API][jpa].
+* The website is backed by a [MySQL][mysql] database. The code binds to the database using the [Java Persistence API][jpa] and [Hibernate][hibernate].
 * The frontend uses HTML, JavaScript and CSS based on [Twitter Bootstrap][bootstrap], [LESS][less] and [jQuery][jquery].
 * [Maven][maven] is used as build environment.
 
@@ -20,6 +20,7 @@ This document is intended for programmers who would like to take the white-label
 [jsp]: http://java.sun.com/products/jsp/syntax/2.0/syntaxref20.html
 [mysql]: https://www.mysql.com/
 [jpa]: https://en.wikipedia.org/wiki/Java_Persistence_API
+[hibernate]: http://www.hibernate.org/
 [bootstrap]: http://twitter.github.com/bootstrap/
 [less]: http://lesscss.org/
 [jquery]: http://jquery.com/
@@ -27,14 +28,51 @@ This document is intended for programmers who would like to take the white-label
 
 ## How Waisda? works
 
-TODO List various pages
-
 There are several important types of entities in the project:
 
 * A **video** has a title, description, source, screencap, length and information on how to play it. There are currently two players available: the JWPlayer (Flash), and the NPO player (Silverlight) that specifically plays content from Dutch public broadcasting associations. Each video in the project specifies which of the two players it would like to use, in combination with the parameters required for the players.
 * A **game** is a session in which one or more players (called participants in the code) watch a video simultaneously and enter zero or more tags at specific timestamps relative to the video. Players can see the other participants’ names and their relative positions based on their session scores.
 * A **tag entry** for a specific game is owned by a user and contains information on what tag was entered exactly, at what timestamp relative to the video it was entered and has a score based on whether the tag matches other users’ tags and/or words in dictionaries.
 * A **dictionary** is a set of words which award extra points when entered by a user. Examples are names of celebrities and names of geographical locations.
+
+To give you a good idea of what is possible on the website, here is an overview of all the pages:
+
+* The header, visible on each page, shows:
+  * how many tags have been entered in total, and how many of those match another tag;
+  * options to login, logout and register if appropriate;
+  * your total score and tag counts, if any.
+* Almost every page shows the games queue in the bottom right corner. When a player starts a new game, all other visitors are alerted and invited to join.
+* The footer, visible on each page, shows:
+  * a link to the home page;
+  * links to various pages with information;
+  * links to Waisda?'s presence on social media sites;
+  * credits in the form of company logos.
+* The homepage shows:
+  * a list of videos immediately available for play;
+  * a four-step explanation of how to get started and score points;
+  * a list of top scoring players based on games from the last seven days;
+  * popular tags entered in games from the last seven days.
+* The game page is where a single game is played:
+  * the video to watch;
+  * a text area to enter tags;
+  * a list of participating players, showing their relative positions based on score;
+  * a list of tags entered, with scores and information on what kind of match it is (if any).
+* After playing a game, the player is taken to a page that recaps the game just played:
+  * the title of the video watched;
+  * a summary of tags entered, grouped by match type;
+  * a list of participants, their scores and tag statistics;
+  * a full list of every tag entered, with scores and match information.
+* Clicking on a user's name anywhere on the site leads to a user's profile page with:
+  * general information about the user (name and some contact information if the user chose to enter it);
+  * score total;
+  * current position based on games played in the last 7 days;
+  * summaries of recent games played;
+  * recent pionieer matches (which award more points than normal matches; see below).
+* Clicking on one of the popular tags on the homepage brings you to a page dedicated to that tag, containing:
+  * who entered the tag the first time, and for what video;
+  * a top six of videos the tag appears in, with for each video a list of other popular tags for that video.
+* Pages to login, register, request a password reset and actually reset a password.
+* Some information pages: general information, how to play the game, terms of service.
 
 TODO: Explain scoring in more detail
 
