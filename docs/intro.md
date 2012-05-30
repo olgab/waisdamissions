@@ -74,9 +74,31 @@ To give you a good idea of what is possible on the website, here is an overview 
 * Pages to login, register, request a password reset and actually reset a password.
 * Some information pages: general information, how to play the game, terms of service.
 
-TODO: Explain scoring in more detail
+## When do two tags *match*?
 
-* player matches
-* synonyms
-* dictionaries
-* pioneers
+Tags are first normalized before they are compared to other tags. To normalize a tag, make it lowercase and remove all non-alphanumeric characters from it. Then remove any accents on any of the letters. Some examples:
+
+* `Street` -> `street`
+* `new york` -> `newyork`
+* `séaNCe` -> `seance`
+* `Route 66` -> `route66`
+* `well-known` -> `wellknown`
+
+Normalizing tags before comparing them makes differences in capitals, whitespace use and accents irrelevant.
+
+Two normalized tag entries `(t1, t2)` match if all of the following conditions are met:
+
+* The tags are for games of the same video;
+* the tags were not entered by the same user;
+* the times (relative to the video) at which the tags are entered are not more than 10 seconds apart;
+* at least one of the following conditions is met:
+ * `t1` is identical to `t2`;
+ * a pair of normalized tag enties `(lo, hi)` exists in table `MatchingTagEntry` where `(t1, t2) == (lo, hi)` or `(t2, t1) == (lo, hi)`.
+
+## How points are awarded
+
+Whenever a player enters a tag, points are awarded for that specific tag entry. If the tag is found in one of the dictionaries (database table `DictionaryEntry`), the player is awarded 25 points. If the tag *matches* one of the existing tags, the player receives 50 points. Together this gives the player a potential 75 points. If the player would receive 0 points, they receive 5 points anyway for the effort, unless the tag is an identical match with another tag entry by the same player. Awarding points this way encourages players to enter tags that are relevant for the video, and to be original if they watch the same video multiple times.
+
+Points awarded to tags might change at a later point. If a tag `t` did not match any other tags when it was first entered, but later a newly entered tag matches `t`, `t`'s score is increased. In this case, `t` does not get 50 points for matching, but a whopping 150. Tag `t` is said to be a *pioneer* because the player was the first to introduce this tag for this specific video. Awarding pioneers more points encourages players to watch and tag videos that don't have many tags entered yet: their initial scores may be low, but the potential score when other players watch and tag the video is substantial. Pioneer tags are given special attention on users' profiles and in the page header for players who are logged in.
+
+TODO: Explain under what circumstances a tag's score is lowered.
