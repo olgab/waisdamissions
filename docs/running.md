@@ -26,7 +26,7 @@ To see how to specify username, password, hostname and other parameters, run `my
 
 The source tree has a Makefile which lists commands for various useful scenarios. The first (and default) target is called `run`, which runs the website in debug mode using the Jetty webserver available to Maven.
 
-Before you do that, you have to point the webserver to the right database. Open `src/main/webapp/WEB-INF/jetty.xml` and find the tag with `name="driverProperties"`. Change the parameters to the appropriate values, then run `make` from the root of the source tree.
+Before you do that, you have to point the webserver to the right database. Open `src/main/webapp/WEB-INF/jetty.xml` and find the tag with `name="driverProperties"`. Change the parameters to the appropriate values, then run `make` from the root of the source tree. The MySQL user you use will need selection and modification rights.
 
 The first time, Maven will download lots of libraries the application depends on. It will take a few minutes. Subsequent times will be much faster.
 
