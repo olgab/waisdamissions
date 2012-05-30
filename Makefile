@@ -9,14 +9,7 @@ clean:
 install:
 	mvn clean install -Dmaven.test.skip
 
-upload: install
-	# uploading WAR to remote /root
-	# run `make deploy` on remote to desploy
-	scp target/manbijthond-web-0.0.1-SNAPSHOT.war mbh:
-
 dump:
-	mysqldump -u root --no-data        waisda-whitelabel MatchingTag Video DictionaryEntry Game TagEntry User ResetPassword Participant > mbh-create.sql
-	mysqldump -u root --no-create-info waisda-whitelabel MatchingTag Video DictionaryEntry > mbh-data.sql
-	sed -i '' -E 's/AUTO_INCREMENT=[0-9]+ //' mbh-create.sql
-	zip mbh-data.sql.zip mbh-data.sql
-	rm mbh-data.sql
+	# dump the current database structure to sql/create-tables.sql
+	mysqldump -u root --no-data waisda MatchingTag Video DictionaryEntry Game TagEntry User ResetPassword Participant > sql/create-tables.sql
+	sed -i '' -E 's/AUTO_INCREMENT=[0-9]+ //' sql/create-tables.sql
