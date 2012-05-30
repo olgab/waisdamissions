@@ -116,11 +116,3 @@ All id`s that are used in the html are hooks for javascript code. So please leav
     The choice for the class-names `equal-cols` and `col` is arbitrary. The plugin provides in any combination of class names for the container and column elements.
 * `class="scroll-box"`
     This class works only in the context of the `class="col"`. When an element within `class="col"` has `class="scroll-box"` it will size vertically to the remaining height of its container and the `overflow-y` will be set to `automatic`. When the content exceeds the vertical boundary, as set by JavaScript, a scrollbar will appear.
-
-## JavaScript
-
-### The games queue
-
-### Submitting tag entries
-
-* Validity of tag entries
