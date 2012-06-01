@@ -50,7 +50,7 @@ public class UserRepository extends AbstractRepository<User> {
 	public TopScores getTopScores() {
 		String q = "select u.id, u.email, u.name, sum(t.score) from User u "
 				+ "inner join TagEntry t on t.owner_id = u.id "
-				+ "where u.email is not null and t.creationDate >= date(now() - interval 60 day) "
+				+ "where u.email is not null and t.creationDate >= date(now() - interval 6 day) "
 				+ "group by u.id having sum(t.score) > 0 order by sum(score) desc";
 		@SuppressWarnings("unchecked")
 		List<Object[]> results = getEntityManager().createNativeQuery(q)
