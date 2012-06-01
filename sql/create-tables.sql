@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.1.51, for apple-darwin10.4.0 (i386)
 --
--- Host: localhost    Database: waisda-whitelabel
+-- Host: localhost    Database: waisda
 -- ------------------------------------------------------
 -- Server version	5.1.51
 
@@ -43,7 +43,7 @@ CREATE TABLE `Video` (
   `duration` int(11) NOT NULL COMMENT 'Length in ms',
   `imageUrl` varchar(255) DEFAULT NULL COMMENT 'URL of preview image',
   `enabled` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Whether this video is available for new games',
-  `playerType` varchar(15) NOT NULL DEFAULT '' COMMENT 'Either ''JW'' or ''NPO''',
+  `playerType` varchar(15) NOT NULL DEFAULT 'JW' COMMENT 'Either ''JW'' or ''NPO''',
   `sourceUrl` varchar(255) DEFAULT NULL COMMENT 'For playerType JW',
   `fragmentID` int(11) DEFAULT NULL COMMENT 'For playerType NPO',
   `sectionNid` int(11) DEFAULT NULL COMMENT 'For playerType NPO',
@@ -179,4 +179,4 @@ CREATE TABLE `Participant` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-05-30 22:39:22
+-- Dump completed on 2012-06-01 11:59:41
