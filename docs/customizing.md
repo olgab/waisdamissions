@@ -12,6 +12,9 @@
 ## Adding dictionaries
 
 ## Adding your own style
+### changing colors
+### adding your logo
+### changing the grid
 
 ## Translating pages
 
