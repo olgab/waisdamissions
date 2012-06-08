@@ -17,7 +17,7 @@ All colors are defined in [variables.less](https://github.com/beeldengeluid/wais
 Example:...
 
 ### Adding your logo
-The logo is placed in the header. To change the logo place your logo-image in the folder [](). And change the path  for the dummy-logo image to your logo in the file [body.tag](https://github.com/beeldengeluid/waisda/blob/master/src/main/webapp/WEB-INF/tags/body.tag). To find the dummy-logo image in the code search for alt="LOGO" within this file. The logo should leave enough space for the tag-line about the amount of tags and matches. In the current setup a logo should not be wider than 220 pixels. 
+The logo is placed in the header. To change the logo place your logo-image in the [images folder](https://github.com/beeldengeluid/waisda/tree/master/src/main/webapp/static/img). And change the path  for the dummy-logo image to your logo in the file [body.tag](https://github.com/beeldengeluid/waisda/blob/master/src/main/webapp/WEB-INF/tags/body.tag). To find the dummy-logo image in the code search for alt="LOGO" within this file. The logo should leave enough space for the tag-line about the amount of tags and matches. In the current setup a logo should not be wider than 220 pixels. 
 
 ### Changing the grid
 
