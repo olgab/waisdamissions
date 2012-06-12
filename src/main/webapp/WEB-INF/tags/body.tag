@@ -100,9 +100,8 @@
 	 	<div class="container">
 				<ul class="unstyled horizontal pull-left">
 					<li><a href="/">Home</a></li>
-		  		<li><a href="/over-het-spel">Over het spel</a></li>
-		  		<li><a href="/spelinstructies">Spelinstructies</a></li>
-		  		<li><a href="/voorwaarden">Algemene voorwaarden</a></li>
+		  		<li><a href="/over-het-spel">Example contentpage 1</a></li>
+		  		<li><a href="/spelinstructies">Example contentpage 2</a></li>
 		  	</ul>
 	  		<ul class="unstyled horizontal pull-right">
 	  			<li>Vind ons ook op</li>
