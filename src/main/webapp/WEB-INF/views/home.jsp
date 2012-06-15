@@ -25,10 +25,9 @@
 	<!-- AddThis Button END -->
 
 	<p class="spaced-bottom">
-		Speel
+		Play
 		<strong>Waisda </strong>
-		en maak zo het archief
-		<a href="/over-het-spel">beter doorzoekbaar</a>.
+		to make it easier to find stuff.
 	</p-->
 	
 	<!--h2>Kanalen</h2-->
@@ -52,13 +51,13 @@
 	<!--h2 class="spaced">Hoe werkt het?</h2-->
 	<div class="row equal-cols">
 		<ol class="unstyled pull-left">
-			<li class="box rich order span3 col"><span class="index">1</span>Kies hierboven of in de wachtrij een video uit</li>
-			<li class="box rich order span3 col"><span class="index">2</span>Voer zoveel mogelijk woorden in die beschrijven wat u ziet of hoort</li>
-			<li class="box rich order span3 col"><span class="index">3</span>Doen anderen dat ook, dan heeft u een match die punten oplevert</li>
-			<li class="box rich order span3 col"><span class="index">4</span><a href="/registreren">Registreer</a> om uw punten te bewaren en <a href="/spelinstructies">lees de spelregels</a></li>
+			<li class="box rich order span3 col"><span class="index">1</span>Select a video above or from the games queue</li>
+			<li class="box rich order span3 col"><span class="index">2</span>Enter as many words that describe what you see and hear</li>
+			<li class="box rich order span3 col"><span class="index">3</span>If others enter the same word. You have a match. This is how you score points.</li>
+			<li class="box rich order span3 col"><span class="index">4</span><a href="/registreren">Register</a> to save your points and read the <a href="/spelinstructies">instructions</a></li>
 		</ol>
-		<p id="silverlight-message" class="clear-both small">Om mee te kunnen doen moet u de <a href="http://www.silverlight.net/">Microsoft
-			Silverlight plugin</a> ge&iuml;nstalleerd hebben.</p>
+		<p id="silverlight-message" class="clear-both small">In order to be able to join <a href="http://www.silverlight.net/">Microsoft
+			Silverlight plugin</a> has to be installed.</p>
 	</div>
 	<!--div id="prizebanner">
 		<a href="/spelinstructies#wedstrijdregels">
@@ -68,7 +67,7 @@
 	
 	<div class="row equal-cols">
 		<div class="box span4 col">
-			<header class="header rich"><h2 class="h3 reset">Topscorers <small>afgelopen 7 dagen</small></h2></header>
+			<header class="header rich"><h2 class="h3 reset">Topscorers <small>last 7 days</small></h2></header>
 			<section class="reset scroll-box">
 				<ol class="unstyled reset">
 				<c:forEach items="${globalStats.topScores.topTen}" var="u" varStatus="status">
@@ -86,7 +85,7 @@
 		<!-- #tagcloud -->
 		<div class="box span4 col leading">
 
-			<header class="header rich"><h2 class="h3 reset">Populairste tags <small>afgelopen 7 dagen</small></h2></header>
+			<header class="header rich"><h2 class="h3 reset">Most populair tags <small>last 7 days</small></h2></header>
 			<section class="reset fixed-low">
 				<ul class="tagcloud unstyled">
 					<c:forEach items="${globalStats.tagCloud}" var="tag">

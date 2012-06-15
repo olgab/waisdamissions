@@ -3,7 +3,7 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tt"%>
 
 <tt:html>
-<tt:head title="Over Waisda?">
+<tt:head title="Example contentpage 1">
 </tt:head>
 <tt:body cssClass="static-page" pageName="overhetspel">
 	

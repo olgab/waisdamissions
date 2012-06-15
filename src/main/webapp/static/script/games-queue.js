@@ -80,7 +80,7 @@ var GameQueue = {
 		}
 
 		// Update count
-		var countText = size == 1 ? '1 spel' : size + ' spellen';
+		var countText = size == 1 ? '1 game' : size + ' games';
 		jQuery('#games-queue-count').text(countText);
 
 		// Update individual game <tr>s
