@@ -15,7 +15,7 @@
 		
 		<header class="clear extended">
 			<h1 class="h4 pull-left reset"><c:out value="${recap.game.video.title}" /></h1>			
-			<span id="timer-remaining" class="small pull-right">Spel gespeeld op<strong class="clear-both">${recap.game.prettyStart}</strong></span>		
+			<span id="timer-remaining" class="small pull-right">Game played on <strong class="clear-both">${recap.game.prettyStart}</strong></span>		
 		</header>
 		
 		<section>
@@ -30,39 +30,39 @@
 				<div class="span6">
 					<table class="table table-striped table-condensed-ext table-clean">
 						<tr>
-							<th colspan="2">Uw bijdrage in dit spel</th>
-							<th class="text-right">punten</th>
+							<th colspan="2">Your contribution to the game</th>
+							<th class="text-right">points</th>
 						</tr>
 						<tr>
 							<td></td>
-							<td><strong><nf:format number="${recap.summary.countEmptyTags}" /></strong> ${recap.summary.countEmptyTags == 1 ? 'tag' : 'tags' } zonder match <span class="help" title="Als een speler in een later spel alsnog op deze tag matcht dan levert u dat minstens 145 punten op">?</span></td>
+							<td><strong><nf:format number="${recap.summary.countEmptyTags}" /></strong> ${recap.summary.countEmptyTags == 1 ? 'tag' : 'tags' } unmatched <span class="help" title="If another player matches this word later on this you will earn 145 points">?</span></td>
 							<td class="text-right"><nf:format number="${recap.summary.countEmptyTags * 5}" /></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td><strong><nf:format number="${recap.summary.countDictionaryMatches}"/></strong> ${recap.summary.countDictionaryMatches == 1 ? 'woordenboekmatch' : 'woordenboekmatches' } <span class="help" title="Een geografische naam levert 25 punten op">?</span></td>
+							<td><strong><nf:format number="${recap.summary.countDictionaryMatches}"/></strong> ${recap.summary.countDictionaryMatches == 1 ? 'dictionarymatch' : 'dictionarymatches' } <span class="help" title="A dictionarymatch will earn you 25 points">?</span></td>
 							<td class="text-right"><nf:format number="${recap.summary.countDictionaryMatches * 25}" /></td>
 						</tr>
 						<tr>
-							<td><img src="/static/img/match-social.png" title="match met medespeler" /></td>
-							<td><strong><nf:format number="${recap.summary.countMatchingTags}"/></strong> ${recap.summary.countMatchingTags == 1 ? 'match' : 'matches' } met medespelers <span class="help" title="Dezelfde tag als een medespeler invoeren levert 50 punten op">?</span></td>
+							<td><img src="/static/img/match-social.png" title="match with other player" /></td>
+							<td><strong><nf:format number="${recap.summary.countMatchingTags}"/></strong> ${recap.summary.countMatchingTags == 1 ? 'match' : 'matches' } met medespelers <span class="help" title="Entering the same tag as one of your co-players will earn you 50 points">?</span></td>
 							<td class="text-right"><nf:format number="${recap.summary.countMatchingTags * 50}" /></td>
 						</tr>
 						<tr>
 							<td><img src="/static/img/match-pioneer.png" title="door uw ge�ntroduceerde match" /></td>
-							<td><strong><nf:format number="${recap.summary.countPioneerTags}"/></strong> ${recap.summary.countPioneerTags == 1 ? 'pioniersmatch' : 'pioniersmatches' } <span class="help" title="Als jij als eerste een tag hebt ingevoerd dan levert de eerstvolgende match daarop minstens 145 punten extra op">?</span></td>
+							<td><strong><nf:format number="${recap.summary.countPioneerTags}"/></strong> ${recap.summary.countPioneerTags == 1 ? 'pionieermatch' : 'pionieermatches' } <span class="help" title="If you were the first to enter a word then the first match will earn you 145 points">?</span></td>
 							<td class="text-right"><nf:format number="${recap.summary.countPioneerTags * 100}" /></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td><strong>Puntentotaal</strong></td>
+							<td><strong>Points total</strong></td>
 							<td class="text-right"><nf:format number="${recap.ownerScore}" /></td>
 						</tr>
 					</table>
-					<p class="small spaced-min">Kijk hiernaast in het overzicht van 'Uw ingevoerde tags' voor een specifiekere toelichting per match.</p>
+					<p class="small spaced-min">Below 'Your tags' on the right you can find a more detailled description of every match.</p>
 					
-					<h3>Meer punten verdienen?</h3>
-					<p>Daag vrienden uit om dit spel te spelen en vergroot uw eigen kans op een hogere score <span class="help" title="Als u als eerste een tag hebt ingevoerd dan levert de eerstvolgende match daarop in een later spel minstens 145 punten extra op">?</span></p>
+					<h3>Earn more points?</h3>
+					<p>Challenge friends and improve your changes to a higher score <span class="help" title="If you were the first to enter a word then the first match will earn you 145 points">?</span></p>
 
 					<!-- AddThis Button BEGIN -->
 					<div id="addthis-bar" class="addthis_toolbox addthis_default_style spaced reserved-space" 
@@ -81,7 +81,7 @@
 						
 				<div id="rankings" class="box span6">
 					<header class="rich">
-						<h2 class="h3 pull-left reset">Eindstand</h2>
+						<h2 class="h3 pull-left reset">Scoreboard</h2>
 					</header>
 					<section class="reset">
 						<ol class="unstyled reset">
@@ -93,7 +93,7 @@
 									<img src="${p.user.smallAvatarUrl}" />
 									${fn:escapeXml(p.user.name)}
 									<span class="score h5"><nf:format number="${p.score}" /></span><br />
-									<small><nf:format number="${p.countTags}" /> ${p.countTags == 1 ? 'tag' : 'tags'} waarvan ${p.countMatches} ${p.countMatches == 1 ? 'match' : 'matches' }</small>
+									<small><nf:format number="${p.countTags}" /> ${p.countTags == 1 ? 'tag' : 'tags'} and ${p.countMatches} ${p.countMatches == 1 ? 'match' : 'matches' }</small>
 							</tt:profileLink>
 							</li>
 						</c:forEach>
@@ -109,12 +109,12 @@
 		<header class="rich extended">
 			<h1 id="playerSessionScore" class="pull-left board span2"><nf:format number="${recap.ownerScore}"/></h1>				
 			<h2 id="playerPosition" class="pull-right reset">
-				<small class="h4">Positie</small>
+				<small class="h4">Position</small>
 				<span id="playerPositionMine">${recap.ownerPosition + 1}</span> / <span id="playerPositionTotal" class="h4">${fn:length(recap.participants)}</span>
 			</h2>
 		</header>
 		<section class="reset">
-			<h3 class="h4 sub-header">Uw ingevulde woorden:</h3>		
+			<h3 class="h4 sub-header">Your tags:</h3>		
 	
 			<div id="tagList" class="tag-list scroll-box">
 				<c:forEach items="${recap.tagEntries}" var="tag">
@@ -129,14 +129,14 @@
 						<span><c:out value="${tag.tag}"/></span>
 						<span class="matching small">
 							<c:if test="${tag.matchingTagEntry != null}">
-								match met <strong><c:out value="${tag.matchingTagEntry.tag}"/></strong>
+								match with <strong><c:out value="${tag.matchingTagEntry.tag}"/></strong>
 
 								<c:choose>
-								<c:when test="${tag.matchingTagEntry.owner.id == tag.owner.id}">van jezelf</c:when>
-								<c:otherwise>van <em><c:out value="${tag.matchingTagEntry.owner.name}"/></em></c:otherwise>
+								<c:when test="${tag.matchingTagEntry.owner.id == tag.owner.id}">from you</c:when>
+								<c:otherwise>from <em><c:out value="${tag.matchingTagEntry.owner.name}"/></em></c:otherwise>
 								</c:choose>
 
-								<c:if test="${tag.pioneer}">. Jij hebt dit woord ge�ntroduceerd</c:if>
+								<c:if test="${tag.pioneer}">. You introduced this word</c:if>
 							</c:if>
 						</span>
 					</div>

@@ -4,21 +4,20 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tt"%>
 
 <tt:html>
-<tt:head title="Wachtwoord vergeten" />
+<tt:head title="Password forgotten" />
 <tt:body pageName="wachtwoord-vergeten">
 
 	<div class="box span9">
-	<h1 class="h2 form-shift">Wachtwoord vergeten</h1>
+	<h1 class="h2 form-shift">Password forgotten</h1>
 	<c:choose>
 	<c:when test="${form.user == null}">
-		<p class="help-block form-shift">Als u uw wachtwoord vergeten bent, kunt u hieronder het
-		emailadres invullen waarmee u zich geregistreerd heeft. U ontvangt dan
-		een e-mail met instructies om uw wachtwoord opnieuw in te stellen.</p>
+		<p class="help-block form-shift">If you forgot your password then please fill out below the emailaddress you provided during registration. 
+			You will receive an email with instructions how to change your password.</p>
 		<f:form commandName="form" action="/wachtwoord-vergeten" id="form"
 			class="form-horizontal" method="post">
 			<fieldset>
 				<div class="control-group">
-					<f:label path="email" class="control-label">E-mailadres</f:label>
+					<f:label path="email" class="control-label">Emailaddress</f:label>
 					<div class="controls">
 						<f:input path="email" id="email" /><br/>
 						<f:errors path="*" cssClass="help-inline" />
@@ -27,7 +26,7 @@
 				<div class="form-actions">
 					<a href="#"
 					onclick="document.getElementById('form').submit(); return false"
-					id="submitLogin" class="btn btn-primary btn-large">Nieuw wachtwoord aanvragen</a> <input
+					id="submitLogin" class="btn btn-primary btn-large">Request new password</a> <input
 					type="submit" value="Inloggen in mijn account"
 					style="position: absolute; top: 0; left: -10000px;" />
 				</div>
@@ -35,11 +34,10 @@
 		</f:form>
 	</c:when>
 	<c:otherwise>
-		<p class="help-block form-shift">U ontvangt binnen enkele momenten een email met verdere
-		instructies.
+		<p class="help-block form-shift">In a few moments you will receive an email with the instructions.
 		<br/>
 		<br/>
-		<a href="/">Terug naar de homepage</a></p>
+		<a href="/">Back to the homepage</a></p>
 	</c:otherwise>
 	</c:choose>
 	</div>

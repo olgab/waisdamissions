@@ -41,11 +41,11 @@ jQuery(function() {
 		
 		function setPasswordFormState() {
 			if(!$('#trigger-password').hasClass('opened')){
-				$('#trigger-password').text('+ Wachtwoord wijzigen');
+				$('#trigger-password').text('+ Change password');
 				$('#change-password').addClass('hide');
 				$('input[type=password]', '#change-password').val('');
 			} else {
-				$('#trigger-password').html('- Wachtwoord <strong>niet</strong> wijzigen');
+				$('#trigger-password').html('- <strong>Cancel</strong> change password');
 				$('#change-password').removeClass('hide');
 			}
 		}

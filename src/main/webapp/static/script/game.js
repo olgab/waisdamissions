@@ -47,7 +47,7 @@ var Game = base2.Base.extend({
 			this.endGame();
 //				this.update();
 		} else if (realElapsed >= 0) {
-			this.setIntroText('<small>Spel start...</small>');
+			this.setIntroText('<small>Game starts...</small>');
 			jQuery('#vid-overlay-screen').addClass('compact-overlay');
 			jQuery('#gameCanvas .outside').removeClass('outside');
 			jQuery('#playerList').attr('class','container clear-both spaced-top');
@@ -80,7 +80,7 @@ var Game = base2.Base.extend({
 	updateQueueTime: function(realElapsed) {
 		if (realElapsed < 0) {
 			var pretty = Utils.prettyPrintTime(-realElapsed);
-			this.setIntroText('<small>Spel start in</small><strong>' + pretty + '</strong>');
+			this.setIntroText('<small>Game starts in</small><strong>' + pretty + '</strong>');
 		}
 	},
 	
@@ -184,7 +184,7 @@ var Game = base2.Base.extend({
 				jQuery('#vid-overlay-screen').removeClass('show').addClass('hide');
 				jQuery("#inputField").focus();	
 			}
-			var prettyRemaining = '<small>nog </small><strong>' + Utils.prettyPrintTime(duration - elapsed) + '</strong>';
+			var prettyRemaining = '<small>Time left </small><strong>' + Utils.prettyPrintTime(duration - elapsed) + '</strong>';
 			if (jQuery("#timer-remaining").html() != prettyRemaining) {
 				jQuery("#timer-remaining").html(prettyRemaining);
 			}
@@ -221,7 +221,7 @@ var Scoreboard = base2.Base.extend({
 				var avatarSpan = jQuery('<span/>', { 'class' : 'avatar' });
 				avatarSpan.append(jQuery('<img/>', { src : player.smallAvatarUrl }));
 				el.append(avatarSpan);
-				el.append(player.name ? player.name : 'Anoniempje');
+				el.append(player.name ? player.name : 'Anonymous');
 			}
 			jQuery('.index', el).text(index + 1);
 			jQuery('#playerList ul').append(el);

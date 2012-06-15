@@ -15,7 +15,7 @@
 			<f:form commandName="form" autocomplete="off" id="meedoenForm" class="form-horizontal">
 	  		<fieldset>
 					<div class="control-group">
-						<f:label path="email" cssClass="control-label">Mailaddress</f:label>
+						<f:label path="email" cssClass="control-label">Emailaddress</f:label>
 						<div class="controls" >
 							<f:input path="email" tabindex="4" cssClass="input-xlarge" /><br/>
 							<f:errors path="email" cssClass="help-inline"/>
