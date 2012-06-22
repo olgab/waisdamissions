@@ -84,7 +84,7 @@ Tags are first normalized before they are compared to other tags. To normalize a
 * `Route 66` -> `route66`
 * `well-known` -> `wellknown`
 
-Normalizing tags before comparing them makes differences in capitals, whitespace use and accents irrelevant.
+Normalizing tags before comparing them makes differences in capitals, whitespace use and accents irrelevant. Waisda?'s implementation of normalization can be found in method `TagEntry.normalize`.
 
 Two normalized tag entries `(t1, t2)` match if all of the following conditions are met:
 
