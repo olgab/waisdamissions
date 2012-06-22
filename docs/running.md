@@ -1,4 +1,4 @@
-# Downloading and running the software
+# Getting started
 
 You will need at least Java 6, Maven and MySQL to run the server in debug mode. The scripts and examples below will look for the `java` and `mvn` executables.
 
