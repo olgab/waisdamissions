@@ -110,23 +110,25 @@ Table `ResetPassword` contains a record for each password reset request. It has 
 
 ## Webserver
 
-### Overview
+The webserver is a Java Spring application and consists of Java classes, JSP templates (views), static resources and some configuration files. The configuration files can be found in directories `src/main/resources`, `rc/main/webapp/META-INF` and `src/main/webapp/WEB-INF` and tell the application where to find the database, views and services, among other things. The static resources consist of images, JavaScript files and CSS files which are downloaded by the browser and can be found in `src/main/webapp/static`.
 
-* Classes
-* Views
-* Static resources
-* Configuration files
+### Package overview
 
-### Package and class overview
+The classes are grouped into the following Java packages:
 
-#### Controllers
-
-#### Services
-
-#### Repositories
-
-Not all tables are mapped as a Java class
+* `nl.waisda.controllers` contains the *controllers*: classes with entry points into the web application. URLs are mapped to method calls using the `@Mapping` annotations on the methods.
+* `nl.waisda.domain` contains the domain classes that map to the database tables. Not all tables are necessarily mapped; only the ones that Hibernate needs to know about, for example because they are used in HQL queries. All mapped tables are listed in `src/main/webapp/META-INF/persistence.xml`.
+* `nl.waisda.exceptions` contains custom `Exception` types.
+* `nl.waisda.forms` contains classes that model `GET`/`POST` parameters for various requests to the controllers.
+* `nl.waisda.interceptors` contains Spring *interceptors* that modify requests before they are passed to the controllers.
+* `nl.waisda.model` contains model classes for passing data around between controllers, repositories, services and views.
+* `nl.waisda.repositories` is responsible for exposing database queries as Java methods; most database tables have a corresponding class in this package.
+* `nl.waisda.services` contains *service* classes: utility methods grouped into classes used by controllers and other services.
+* `nl.waisda.tags` contains custom JSP tags.
+* `nl.waisda.validators` contains validators that check posted form objects for consistency before they are given to controllers.
 
 ### Views
 
-* The html, head and body tags
+The JSP views can be found in `src/main/webapp/WEB-INF/views`. There is usually one view for each type of page.
+
+Almost every page has a header and a footer, so these parts are separated into their own reuseable subviews in the form of custom JSP tags. They can be found in `src/main/webapp/WEB-INF/tags`.
