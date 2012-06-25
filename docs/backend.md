@@ -48,13 +48,61 @@ The following fields are for registered users only and are optional; they are on
 
 ### Participant
 
+Whenever a user joins a game, a record is created in this table. It is used to draw the participants list while players wait for a game to begin.
+
+It has the following fields:
+
+* id: auto-incrementing ID
+* user_id: ID of user who joined the game
+* game_id: ID of game joined
+* joinedOn: date/time when user joined game
+
 ### TagEntry
+
+Table `TagEntry` keeps track of what users entered what tags for what games. It has the following fields:
+
+* id: auto-incrementing ID
+* dictionary: name of dictionary normalizedTag was found in the moment the entry was created (see table DictionaryEntry below)
+* normalizedTag: normalized version of tag entered
+* score: score as computed by the score engine; might change later on as more matches become available
+* tag: tag as entered by user (unchanged)
+* gametime: time at which tag was entered, relative to start of video (in ms)
+* typingDuration: how long it took the user to type the tag (in ms)
+* game_id: ID of game for which tag was entered (join with table Game to find out video)
+* owner_id: ID of user who entered the tag
+* matchingTagEntry_id: ID of oldest matching tag, if any
+* pioneer: whether no matching tag was found the moment the tag was entered (see chapter Introduction for a detailed explanation)
+* creationDate: absolute date/time at which tag was entered
 
 ### MatchingTag
 
+Table MatchingTag contains pairs of normalized tags that allow tag entries to match and score more points. For example, the table could contain synonym pairs.
+
+It has the following fields:
+
+* lo: low normalized element of the pair
+* hi: high normalized element of the pair
+
+For each pair `(lo, hi)`, `lo < hi` must be true, where `<` is the MySQL comparison operator, based on the database's current character encoding and collation.
+
 ### DictionaryEntry
 
+Table `DictionaryEntry` is queried whenever a new tag is entered, to determine whether the normalized version of the entered tag matches any of the records on this table. If it does, field `dictionary` is set for the `TagEntry` record and the player is awarded extra points.
+
+It has the following fields:
+
+* normalizedTag: the normalized version of the tag to match
+* dictionary: name of the dictionary to which the tag belongs
+
 ### ResetPassword
+
+Table `ResetPassword` contains a record for each password reset request. It has the following fields:
+
+* id: auto-incrementing ID
+* user_id: ID of user for which reset was requested
+* resetKey: encrypted and salted key
+* creationDate: date/time at which request was created
+* resetDate: date/time at which the request was honored (by user following link in email)
 
 ## Webserver
 
