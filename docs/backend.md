@@ -6,45 +6,49 @@ The following sections discuss the individual tables and their fields.
 
 ### Video
 
-Table Video has the following fields:
+Table `Video` has the following fields:
 
-* id: auto-incrementing ID
-* title: title of video for display in hyperlinks
-* duration: duration of video in ms
-* imageUrl: absolute URL of preview image
-* enabled: whether video is available for new games
-* playerType: either 'JW' or 'NPO' for the JWPlayer and Silverlight NPO player, respectively
-* sourceUrl: for playerType 'JW', absolute URL of video to play
-* fragmentID: for playerType 'NPO'
-* sectionNid: for playerType 'NPO'
-* startTime: for playerType 'NPO'
+* `id`: auto-incrementing ID
+* `title`: title of video for display in hyperlinks
+* `duration`: duration of video in ms
+* `imageUrl`: absolute URL of preview image
+* `enabled`: whether video is available for new games
+* `playerType`: either 'JW' or 'NPO' for the JWPlayer and Silverlight NPO player, respectively
+* `sourceUrl`: for playerType 'JW', absolute URL of video to play
+* `fragmentID`: for playerType 'NPO'
+* `sectionNid`: for playerType 'NPO'
+* `startTime`: for playerType 'NPO'
 
 ### User
 
-* id: auto-incrementing ID
-* creationDate: date/time at which user record was created
+Table `User` models players who have registered or played at least one game. It has the following fields:
+
+* `id`: auto-incrementing ID
+* `creationDate`: date/time at which user record was created
 
 The following fields are for registered users only and are mandatory:
 
-* email: email address of user
-* name: username for public display
-* password: encrypted and salted password
+* `email`: email address of user
+* `name`: username for public display
+* `password`: encrypted and salted password
 
 The following fields are for registered users only and are optional; they are only used in a user's public profile:
 
-* dateOfBirth: date of birth of user
-* usernameFacebook: Facebook username or profile URL
-* usernameHyves: Hyves username
-* usernameTwitter: Twitter username
-* gender: user's gender
+* `dateOfBirth`: date of birth of user
+* `usernameFacebook`: Facebook username or profile URL
+* `usernameHyves`: Hyves username
+* `usernameTwitter`: Twitter username
+* `gender`: user's gender
 
 ### Game
 
-* id: auto-incrementing ID
-* start: date/time at which game starts (usually 20 seconds after game is created, to allow users to queue)
-* initiator_id: ID of user who created the game
-* video_id: ID of video tags are added to
-* countExistingVideoTags: number of tags that were added to the video the moment the game was created; used to determine whether the "players from the past" should be shown while players are waiting for the game to start
+Table `Game` models games which link tag entries to videos in gaming sessions. It has the following fields:
+
+* `id`: auto-incrementing ID
+* `start`: date/time at which game starts (usually 20 seconds after game is created, to allow users to queue)
+* `initiator_id`: ID of user who created the game
+* `video_id`: ID of video tags are added to
+* `countExistingVideoTags`: number of tags that were added to the video the moment the game was created; used to determine whether the "players from the past" should be shown while players are waiting for the game to start
 
 ### Participant
 
@@ -52,36 +56,36 @@ Whenever a user joins a game, a record is created in this table. It is used to d
 
 It has the following fields:
 
-* id: auto-incrementing ID
-* user_id: ID of user who joined the game
-* game_id: ID of game joined
-* joinedOn: date/time when user joined game
+* `id`: auto-incrementing ID
+* `user_id`: ID of user who joined the game
+* `game_id`: ID of game joined
+* `joinedOn`: date/time when user joined game
 
 ### TagEntry
 
 Table `TagEntry` keeps track of what users entered what tags for what games. It has the following fields:
 
-* id: auto-incrementing ID
-* dictionary: name of dictionary normalizedTag was found in the moment the entry was created (see table DictionaryEntry below)
-* normalizedTag: normalized version of tag entered
-* score: score as computed by the score engine; might change later on as more matches become available
-* tag: tag as entered by user (unchanged)
-* gametime: time at which tag was entered, relative to start of video (in ms)
-* typingDuration: how long it took the user to type the tag (in ms)
-* game_id: ID of game for which tag was entered (join with table Game to find out video)
-* owner_id: ID of user who entered the tag
-* matchingTagEntry_id: ID of oldest matching tag, if any
-* pioneer: whether no matching tag was found the moment the tag was entered (see chapter Introduction for a detailed explanation)
-* creationDate: absolute date/time at which tag was entered
+* `id`: auto-incrementing ID
+* `dictionary`: name of dictionary normalizedTag was found in the moment the entry was created (see table DictionaryEntry below)
+* `normalizedTag`: normalized version of tag entered
+* `score`: score as computed by the score engine; might change later on as more matches become available
+* `tag`: tag as entered by user (unchanged)
+* `gametime`: time at which tag was entered, relative to start of video (in ms)
+* `typingDuration`: how long it took the user to type the tag (in ms)
+* `game_id`: ID of game for which tag was entered (join with table Game to find out video)
+* `owner_id`: ID of user who entered the tag
+* `matchingTagEntry_id`: ID of oldest matching tag, if any
+* `pioneer`: whether no matching tag was found the moment the tag was entered (see chapter Introduction for a detailed explanation)
+* `creationDate`: absolute date/time at which tag was entered
 
 ### MatchingTag
 
-Table MatchingTag contains pairs of normalized tags that allow tag entries to match and score more points. For example, the table could contain synonym pairs.
+Table `MatchingTag` contains pairs of normalized tags that allow tag entries to match and score more points. For example, the table could contain synonym pairs.
 
 It has the following fields:
 
-* lo: low normalized element of the pair
-* hi: high normalized element of the pair
+* `lo`: low normalized element of the pair
+* `hi`: high normalized element of the pair
 
 For each pair `(lo, hi)`, `lo < hi` must be true, where `<` is the MySQL comparison operator, based on the database's current character encoding and collation.
 
@@ -91,18 +95,18 @@ Table `DictionaryEntry` is queried whenever a new tag is entered, to determine w
 
 It has the following fields:
 
-* normalizedTag: the normalized version of the tag to match
-* dictionary: name of the dictionary to which the tag belongs
+* `normalizedTag`: the normalized version of the tag to match
+* `dictionary`: name of the dictionary to which the tag belongs
 
 ### ResetPassword
 
 Table `ResetPassword` contains a record for each password reset request. It has the following fields:
 
-* id: auto-incrementing ID
-* user_id: ID of user for which reset was requested
-* resetKey: encrypted and salted key
-* creationDate: date/time at which request was created
-* resetDate: date/time at which the request was honored (by user following link in email)
+* `id`: auto-incrementing ID
+* `user_id`: ID of user for which reset was requested
+* `resetKey`: encrypted and salted key
+* `creationDate`: date/time at which request was created
+* `resetDate`: date/time at which the request was honored (by user following link in email)
 
 ## Webserver
 
