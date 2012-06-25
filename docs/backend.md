@@ -110,13 +110,13 @@ Table `ResetPassword` contains a record for each password reset request. It has 
 
 ## Webserver
 
-The webserver is a Java Spring application and consists of Java classes, JSP templates (views), static resources and some configuration files. The configuration files can be found in directories `src/main/resources`, `rc/main/webapp/META-INF` and `src/main/webapp/WEB-INF` and tell the application where to find the database, views and services, among other things. The static resources consist of images, JavaScript files and CSS files which are downloaded by the browser and can be found in `src/main/webapp/static`.
+The webserver is a Java Spring application and consists of Java classes, JSP templates (views), static resources and some configuration files. The configuration files can be found in directories `src/main/resources`, `src/main/webapp/META-INF` and `src/main/webapp/WEB-INF` and tell the application where to find the database, views and services, among other things. The static resources consist of images, JavaScript files and CSS files which are downloaded by the browser and can be found in `src/main/webapp/static`.
 
 ### Package overview
 
 The classes are grouped into the following Java packages:
 
-* `nl.waisda.controllers` contains the *controllers*: classes with entry points into the web application. URLs are mapped to method calls using the `@Mapping` annotations on the methods.
+* `nl.waisda.controllers` contains the *controllers*: classes with entry points into the web application. URLs are mapped to method calls using the `@RequestMapping` annotations on the methods.
 * `nl.waisda.domain` contains the domain classes that map to the database tables. Not all tables are necessarily mapped; only the ones that Hibernate needs to know about, for example because they are used in HQL queries. All mapped tables are listed in `src/main/webapp/META-INF/persistence.xml`.
 * `nl.waisda.exceptions` contains custom `Exception` types.
 * `nl.waisda.forms` contains classes that model `GET`/`POST` parameters for various requests to the controllers.
