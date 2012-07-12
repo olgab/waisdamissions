@@ -283,6 +283,8 @@ section.main {
   padding: 0 9px;
 }
 .channel .img {
+  min-height: 78px;
+  background-color: #000000;
   padding: 0;
   margin-bottom: 4px;
   position: relative;
