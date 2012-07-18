@@ -42,7 +42,7 @@
 					<div class="overlay trigger"></div>
 				</div>
 				<h3 class="h5">${channel.video.title}</h3>
-				<p class="small">${channel.video.timesPlayed} keer gespeeld<br/>hoogste score: <nf:format number="${channel.highscore}" /></p>
+				<p class="small">games: ${channel.video.timesPlayed}<br/>high score: <nf:format number="${channel.highscore}" /></p>
 			</a>
 		</li>
 		</c:forEach>		
@@ -52,7 +52,7 @@
 	<div class="row equal-cols">
 		<ol class="unstyled pull-left">
 			<li class="box rich order span3 col"><span class="index">1</span>Select a video above or from the games queue</li>
-			<li class="box rich order span3 col"><span class="index">2</span>Enter as many words that describe what you see and hear</li>
+			<li class="box rich order span3 col"><span class="index">2</span>Enter as many words as possible to describe what you see and hear</li>
 			<li class="box rich order span3 col"><span class="index">3</span>If others enter the same word. You have a match. This is how you score points.</li>
 			<li class="box rich order span3 col"><span class="index">4</span><a href="/registreren">Register</a> to save your points and read the <a href="/spelinstructies">instructions</a></li>
 		</ol>

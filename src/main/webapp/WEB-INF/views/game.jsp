@@ -26,7 +26,7 @@
 				
 					<h2 class="h4">Instructions</h2>
 					<ul>
-						<li>Try to enter as much words that describe what you see or hear</li>
+						<li>Try to enter as many words as possible to describe what you see or hear</li>
 						<li>Confirm a word by pushing [enter] on your keyboard</li>
 						<li>Points can be earned by making <strong>matches</strong>, when you have entered the same word as a co-player</li>
 						<li>When joining the game you confirm to the following <a href="/voorwaarden" target="_blank">terms and conditions</a></li>
