@@ -36,7 +36,15 @@
 		<c:forEach var="channel" items="${channels}">
 		
 		<li class="span2">
-			<a href="/start-game/${channel.video.id}" title="${channel.video.title}" rel="nofollow" class="box channel col">
+			<c:choose>
+				<c:when test="${mission != null}">
+					<a href="/mission/${mission}/start-game/${channel.video.id}" title="${channel.video.title}" rel="nofollow" class="box channel col">
+				</c:when>
+				<c:otherwise>
+					<a href="/start-game/${channel.video.id}" title="${channel.video.title}" rel="nofollow" class="box channel col">
+				</c:otherwise>
+			</c:choose>			
+						
 				<div class="img">
 					<img src="${channel.video.imageUrl}" />
 					<div class="overlay trigger"></div>
