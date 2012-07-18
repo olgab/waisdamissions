@@ -40,17 +40,17 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><strong><nf:format number="${recap.summary.countDictionaryMatches}"/></strong> ${recap.summary.countDictionaryMatches == 1 ? 'dictionarymatch' : 'dictionarymatches' } <span class="help" title="A dictionarymatch will earn you 25 points">?</span></td>
+							<td><strong><nf:format number="${recap.summary.countDictionaryMatches}"/></strong> ${recap.summary.countDictionaryMatches == 1 ? 'dictionary match' : 'dictionary matches' } <span class="help" title="A dictionarymatch will earn you 25 points">?</span></td>
 							<td class="text-right"><nf:format number="${recap.summary.countDictionaryMatches * 25}" /></td>
 						</tr>
 						<tr>
 							<td><img src="/static/img/match-social.png" title="match with other player" /></td>
-							<td><strong><nf:format number="${recap.summary.countMatchingTags}"/></strong> ${recap.summary.countMatchingTags == 1 ? 'match' : 'matches' } met medespelers <span class="help" title="Entering the same tag as one of your co-players will earn you 50 points">?</span></td>
+							<td><strong><nf:format number="${recap.summary.countMatchingTags}"/></strong> ${recap.summary.countMatchingTags == 1 ? 'match' : 'matches' } with other players <span class="help" title="Entering the same tag as one of your co-players will earn you 50 points">?</span></td>
 							<td class="text-right"><nf:format number="${recap.summary.countMatchingTags * 50}" /></td>
 						</tr>
 						<tr>
 							<td><img src="/static/img/match-pioneer.png" title="door uw ge�ntroduceerde match" /></td>
-							<td><strong><nf:format number="${recap.summary.countPioneerTags}"/></strong> ${recap.summary.countPioneerTags == 1 ? 'pionieermatch' : 'pionieermatches' } <span class="help" title="If you were the first to enter a word then the first match will earn you 145 points">?</span></td>
+							<td><strong><nf:format number="${recap.summary.countPioneerTags}"/></strong> ${recap.summary.countPioneerTags == 1 ? 'pioneer match' : 'pioneer matches' } <span class="help" title="If you were the first to enter a word then the first match will earn you 145 points">?</span></td>
 							<td class="text-right"><nf:format number="${recap.summary.countPioneerTags * 100}" /></td>
 						</tr>
 						<tr>
@@ -59,7 +59,7 @@
 							<td class="text-right"><nf:format number="${recap.ownerScore}" /></td>
 						</tr>
 					</table>
-					<p class="small spaced-min">Below 'Your tags' on the right you can find a more detailled description of every match.</p>
+					<p class="small spaced-min">On the right, below 'Your tags', you can find a more detailed description of every match.</p>
 					
 					<h3>Earn more points?</h3>
 					<p>Challenge friends and improve your changes to a higher score <span class="help" title="If you were the first to enter a word then the first match will earn you 145 points">?</span></p>

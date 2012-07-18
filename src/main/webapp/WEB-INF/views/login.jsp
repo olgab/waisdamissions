@@ -19,7 +19,7 @@
   					<f:errors path="*" cssClass="error-block" />
 
   					<div class="control-group">
-  						<f:label path="emailaddress" cssClass="control-label">Emailaddress</f:label>
+  						<f:label path="emailaddress" cssClass="control-label">Email</f:label>
   						<div class="controls">
   							<f:input path="emailaddress" id="loginName" />
   						</div>
