@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.1.51, for apple-darwin10.4.0 (i386)
+-- MySQL dump 10.13  Distrib 5.5.16, for osx10.6 (i386)
 --
 -- Host: localhost    Database: waisda
 -- ------------------------------------------------------
--- Server version	5.1.51
+-- Server version	5.5.16
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -45,7 +45,7 @@ CREATE TABLE `Video` (
   `enabled` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Whether this video is available for new games',
   `playerType` varchar(15) NOT NULL DEFAULT 'JW' COMMENT 'Either ''JW'' or ''NPO''',
   `sourceUrl` varchar(255) DEFAULT NULL COMMENT 'For playerType JW',
-  `fragmentID` int(11) DEFAULT NULL COMMENT 'For playerType NPO',
+  `fragmentID` varchar(255) DEFAULT NULL COMMENT 'For playerType NPO',
   `sectionNid` int(11) DEFAULT NULL COMMENT 'For playerType NPO',
   `startTime` int(11) DEFAULT NULL COMMENT 'For playerType NPO',
   PRIMARY KEY (`id`),
@@ -98,7 +98,7 @@ DROP TABLE IF EXISTS `TagEntry`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `TagEntry` (
-  `id` int(11) NOT NULL DEFAULT '0',
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `dictionary` varchar(31) CHARACTER SET utf8 DEFAULT NULL COMMENT 'Dictionary in which tag is found (awards extra points)',
   `normalizedTag` varchar(63) CHARACTER SET utf8 NOT NULL DEFAULT '' COMMENT 'Normalized version of tag',
   `score` int(11) NOT NULL COMMENT 'Computed score (stored for performance)',
@@ -109,7 +109,8 @@ CREATE TABLE `TagEntry` (
   `owner_id` int(11) NOT NULL COMMENT 'Player who entered the tag',
   `matchingTagEntry_id` int(11) DEFAULT NULL COMMENT 'Matching tag, if any (may be set later; awards extra points)',
   `pioneer` tinyint(1) NOT NULL COMMENT 'Whether there was no match when tag was entered',
-  `creationDate` datetime NOT NULL COMMENT 'Date at which tag was entered'
+  `creationDate` datetime NOT NULL COMMENT 'Date at which tag was entered',
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -179,4 +180,4 @@ CREATE TABLE `Participant` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-06-01 11:59:41
+-- Dump completed on 2012-07-18 14:27:59

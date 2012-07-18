@@ -38,7 +38,7 @@ public class Video {
 	private PlayerType playerType;
 
 	@Basic
-	private Integer fragmentID;
+	private String fragmentID;
 
 	/** Start time within episode, in ms. */
 	@Basic
@@ -77,7 +77,7 @@ public class Video {
 		return playerType;
 	}
 
-	public Integer getFragmentID() {
+	public String getFragmentID() {
 		return fragmentID;
 	}
 
