@@ -120,7 +120,7 @@ public class User implements Comparable<User> {
 	}
 
 	public String getName() {
-		return name != null ? name : "Anoniempje";
+		return name != null ? name : "Guest";
 	}
 
 	public void setName(String name) {

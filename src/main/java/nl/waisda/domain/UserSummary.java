@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 public class UserSummary {
 
-	public static final UserSummary GHOST = new UserSummary(0, "Spelers uit het verleden", 0,
+	public static final UserSummary GHOST = new UserSummary(0, "Previous players", 0,
 			"/static/img/r2d2-small.png");
 
 	private int id;

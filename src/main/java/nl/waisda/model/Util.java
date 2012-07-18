@@ -7,6 +7,7 @@ import java.util.Locale;
 public class Util {
 
 	public static final Locale DUTCH_LOCALE = new Locale("NL", "nl");
+	public static final Locale ENGLISH_LOCALE = Locale.ENGLISH;
 
 	private Util() {
 

@@ -11,10 +11,10 @@ var TaggingHistory = base2.Base.extend({
 				el = jQuery('<div/>', { 'class' : 'tag', 'id' : this.idPrefix + tag.id });
 				el.append(jQuery('<span/>', { 'class' : 'points', 'text': '+' + tag.score }));
 				if (tag.matchingTag) {
-					var ownerName = tag.matchingTagOwnerName ? tag.matchingTagOwnerName : 'Anoniempje';
+					var ownerName = tag.matchingTagOwnerName ? tag.matchingTagOwnerName : 'Guest';
 					var title = 'match met ' + tag.matchingTag + ' van ' + ownerName;
 					if (tag.pioneer) {
-						title += '. Jij hebt deze tag ge�ntroduceerd';
+						title += '. You introduced this tag';
 					}
 					var iconSrc = '/static/img/' + (tag.pioneer ? 'match-pioneer.png' : 'match-social.png');
 					el.append(jQuery('<img/>',  { 'class' : 'icon', 'title' : title, 'src' : iconSrc }));

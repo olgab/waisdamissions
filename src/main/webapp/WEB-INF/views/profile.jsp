@@ -75,7 +75,7 @@
 					</div>
 					
 					<div class="control-group reset genderEditor">
-						<f:label path="gender" cssClass="control-label">Sexe</f:label>
+						<f:label path="gender" cssClass="control-label">Gender</f:label>
 						<div class="inline-boxes controls">
 							<f:radiobuttons path="gender" itemLabel="prettyLongName"/>
 						</div>
@@ -149,7 +149,7 @@
 				</c:if>
 				<c:if test="${not empty profile.user.gender.prettyLongName}">
 					<tr>
-						<th class="span2 indent">Sexe</th>
+						<th class="span2 indent">Gender</th>
 						<td>${profile.user.gender.prettyLongName}</td>
 					</tr>
 				</c:if>

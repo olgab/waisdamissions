@@ -1,7 +1,7 @@
 package nl.waisda.domain;
 
 public enum Gender {
-	MALE("m", "Man"), FEMALE("v", "Vrouw");
+	MALE("m", "Male"), FEMALE("v", "Female");
 
 	private String prettyShortName;
 	private String prettyLongName;
