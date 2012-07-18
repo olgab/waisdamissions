@@ -1,4 +1,4 @@
 waisdamissions
 ==============
 
-missions
+This extents Waisda with support for missions
