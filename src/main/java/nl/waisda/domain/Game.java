@@ -27,7 +27,7 @@ public class Game {
 	public static final int ACCEPTABLE_LAG_MS = 2 * 60 * 1000; // 2 minutes
 
 	public static final DateFormat DATE_FORMAT = new SimpleDateFormat(
-			"EEEE d MMMM yyyy 'om' HH:mm", Util.DUTCH_LOCALE);
+			"EEEE d MMMM yyyy 'at' HH:mm", Util.ENGLISH_LOCALE);
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -89,7 +89,7 @@ public class Game {
 	}
 	
 	public String getFormattedDay() {
-		DateFormat df = new SimpleDateFormat("EEEE dd-MM-yyyy", Util.DUTCH_LOCALE);
+		DateFormat df = new SimpleDateFormat("EEEE dd-MM-yyyy", Util.ENGLISH_LOCALE);
 		String s = df.format(start);
 		return Character.toUpperCase(s.charAt(0)) + s.substring(1);
 	}
