@@ -13,7 +13,7 @@
 <c:choose>
 <c:when test="${you}">
 <h1>Your profile</h1>
-<p class="spaced">This profile is visible to all visitors on this site</p>		
+<p class="spaced">This profile is visible to all visitors of this site</p>		
 
 </c:when>
 <c:otherwise>
@@ -27,7 +27,7 @@
 		<div class="box-inner">
 			<img src="${profile.user.avatarUrl}" class="pull-left" />
 			<h2 class="pull-left h3"><c:out value="${profile.user.name}"/></h2>	
-			<p class="h1 reset clear-both"><nf:format number="${profile.user.totalScore}" /><span class="small">Points total</span></p>
+			<p class="h1 reset clear-both"><nf:format number="${profile.user.totalScore}" /><span class="small">Total score</span></p>
 		</div>
 	</div>	
 	
@@ -179,7 +179,7 @@
 	<!-- #rankings -->
 	<div id="rankings" class="box span4 col leading">
 		<header class="rich">
-			<h2 class="h3 reset">Position current week</h2>
+			<h2 class="h3 reset">Rank this week</h2>
 		</header>
 		<section class="reset">
 			<ol class="unstyled reset">
@@ -230,11 +230,11 @@
 	
 	<div id="pioneer-matches" class="box span4">
 		<header class="rich relative ${you && user.countNewPioneerMatches > 0 ? 'highlight' : ''}">
-			<h2 class="h3 reset">Most recent pionieermatches</h2>
+			<h2 class="h3 reset">Most recent pioneer matches</h2>
 			<img src="/static/img/match-pioneer-l.png" title="" class="pull-out-right" />
 		</header>
 		<section class="reset">
-			<p class="small box-inner"><strong>Pionieermatches</strong> are made when another player matches on a word you entered first. This can only happens once per word. But also outside a game-session.</p>
+			<p class="small box-inner"><strong>Pioneer matches</strong> are made when you are first to enter a word that gets matched. This can only happen once per word.</p>
 			<div class="row box-inner">
 				<h3 class="h5 span1 pull-left">match</h3>
 				<h3 class="h5 pull-left">in game</h3>

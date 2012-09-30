@@ -38,8 +38,7 @@
           <Set name="maxPoolSize">50</Set>
           <Set name="allowLocalTransactions">true</Set>
           <Get name="driverProperties">
-             <Put name="user">waisda</Put>
-             <Put name="password">waisda</Put>
+             <Put name="user">root</Put>
              <Put name="url">jdbc:mysql://localhost:3306/waisda?characterEncoding=UTF-8&amp;useUnicode=true</Put>
  		  </Get>
           <Call name="init" />

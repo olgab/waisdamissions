@@ -12,7 +12,7 @@
 		<h1 class="h2 form-shift">Change password</h1>
 			<c:choose>
 			<c:when test="${success}">
-				<p class="help-block form-shift">Your password has been changed. Please do <a href="/inloggen">login</a> with your new password.</p>
+				<p class="help-block form-shift">Your password has been changed. Please <a href="/inloggen">log in</a> with your new password.</p>
 			</c:when>
 			<c:when test="${errorMessage != null}">
 				<div class="error-block">${errorMessage}</div>
@@ -22,7 +22,7 @@
 					<fieldset>
 						<f:errors path="*" cssClass="error-block" />
 						<c:if test="${form != null}">
-							<p class="help-block form-shift spaced-min">The link in your email provides to change your password once:</p>
+							<p class="help-block form-shift spaced-min">The link in your email allows you to change your password once:</p>
 							<input type="hidden" value="${form.id}" id="id" name="id" />
 							<input type="hidden" value="${form.plainTextKey}" id="plainTextKey" name="plainTextKey"/>
 							<div class="control-group">
@@ -56,6 +56,6 @@
 
 </tt:body>
 	<script type="text/javascript">
-	$('password').focus();
+	$('#password').focus();
 	</script>
 </tt:html>

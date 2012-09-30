@@ -35,3 +35,29 @@ The first time, Maven will download lots of libraries the application depends on
 To deploy the website in a proper J2EE container, run `make deploy`. This will create a `.war` file which you can then place, say, in a Tomcat container. The website expects to be the root website (all its URLs must be top-level), so you will probably have to rename the file to `ROOT.war` (at least in the case of Tomcat).
 
 The database settings for running the website this way are read from `src/main/resources/config.properties` rather than `jetty.xml`. Look for the properties whose names start with `jdbc.`.
+
+## Adding your own videos
+
+To add your own videos, simply fill the `Video` table with records. They will then become available in the website for playing sessions with them and earning scores. The default video selection for the channels on the homepage chooses randomly (uniformly) from all available videos. The structure of the table is explained in the "Backend architecture" chapter.
+
+If you have existing data available in SQL format, you can import it using various MySQL graphical tools, or using the command line:
+
+```
+$ mysql < videos.sql
+```
+
+If you have video data in CSV format, again you can use one of the many MySQL tools out there, or use the command line utility [`mysqlimport`](https://dev.mysql.com/doc/refman/5.0/en/mysqlimport.html). It allows you to map the various columns in the CSV file to specific columns in the `Video` table.
+
+## Adding your own style
+
+### Changing colors
+
+All colors are defined in [variables.less](../src/main/webapp/static/styles/less/variables.less). The easiest way to change a color throughout the whole project is changing it's RGB-value in this less-file. To establish a link between the RGB-values and what you see on screen the variable-name should describe the color. This makes it easier to recognize and visualize the values and their on-screen representation. If a variable's name does not describe the new color very well please change it accordingly and run a simple search and replace action through all the less files.
+
+### Adding your logo
+
+The logo is placed in the header. To change the logo place your logo-image in the [images folder](../src/main/webapp/static/img). And change the path for the dummy-logo image to your logo in the file [body.tag](../src/main/webapp/WEB-INF/tags/body.tag). To find the dummy-logo image in the code search for alt="LOGO" within this file. The logo should leave enough space for the tag-line about the amount of tags and matches. In the current setup a logo should not be wider than 220 pixels. 
+
+### Changing the grid
+
+The document about [Front-end architecture](frontend.md) contains a description of how the grid can be accustomed to your specific needs. The current grid is based on 12 columns of 60 pixels wide divided by a 20 pixel wide gutter. This is also the document where you can find more in-debt descriptions about the front-end architecture. It's a starting point in case you need to make more changes to the visual design or layout. 

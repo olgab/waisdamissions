@@ -8,16 +8,16 @@
 <tt:body pageName="wachtwoord-vergeten">
 
 	<div class="box span9">
-	<h1 class="h2 form-shift">Password forgotten</h1>
+	<h1 class="h2 form-shift">Forgot your password?</h1>
 	<c:choose>
 	<c:when test="${form.user == null}">
-		<p class="help-block form-shift">If you forgot your password then please fill out below the emailaddress you provided during registration. 
-			You will receive an email with instructions how to change your password.</p>
+		<p class="help-block form-shift">If you forgot your password then please fill out the email address you provided during registration below.
+			You will receive an email with instructions on how to change your password.</p>
 		<f:form commandName="form" action="/wachtwoord-vergeten" id="form"
 			class="form-horizontal" method="post">
 			<fieldset>
 				<div class="control-group">
-					<f:label path="email" class="control-label">Emailaddress</f:label>
+					<f:label path="email" class="control-label">Email address</f:label>
 					<div class="controls">
 						<f:input path="email" id="email" /><br/>
 						<f:errors path="*" cssClass="help-inline" />
@@ -44,6 +44,6 @@
 
 </tt:body>
 <script type="text/javascript">
-	$('email').focus();
+	$('#email').focus();
 	</script>
 </tt:html>

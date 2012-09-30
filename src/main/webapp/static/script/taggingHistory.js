@@ -19,6 +19,10 @@ var TaggingHistory = base2.Base.extend({
 					var iconSrc = '/static/img/' + (tag.pioneer ? 'match-pioneer.png' : 'match-social.png');
 					el.append(jQuery('<img/>',  { 'class' : 'icon', 'title' : title, 'src' : iconSrc }));
 				}
+				if (tag.dictionary) {
+					var iconSrc = '/static/img/match-dictionary.png';
+					el.append(jQuery('<img/>',  { 'class' : 'icon', 'title' : 'This tag was found in a dictionary', 'src' : iconSrc }));
+				}
 				el.append(jQuery('<span/>', { 'text'  : tag.tag }));
 			} else {
 				// Update existing element

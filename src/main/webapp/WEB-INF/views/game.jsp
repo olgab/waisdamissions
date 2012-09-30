@@ -22,14 +22,14 @@
 		<section class="reset">
 			<div id="vid-overlay-screen" class="row-fluid show">
 				<div id="explanation" class="box clean span6">
-					<div id="timer-intro" class="timer-intro"><small>Game starts in</small><strong>00:15</strong></div>
+					<div id="timer-intro" class="timer-intro"><small>The game starts in</small><strong>00:15</strong></div>
 				
 					<h2 class="h4">Instructions</h2>
 					<ul>
 						<li>Try to enter as many words as possible to describe what you see or hear</li>
 						<li>Confirm a word by pushing [enter] on your keyboard</li>
-						<li>Points can be earned by making <strong>matches</strong>, when you have entered the same word as a co-player</li>
-						<li>When joining the game you confirm to the following <a href="/voorwaarden" target="_blank">terms and conditions</a></li>
+						<li>Earn points by <strong>matching</strong>, which happens when you enter the same word as another player</li>
+						<li>By joining a game, you submit to the following <a href="/voorwaarden" target="_blank">terms and conditions</a></li>
 					</ul>				
 					<h3 class="h5">Good luck!</h3>
 				</div>
@@ -63,7 +63,7 @@
 		<header class="rich extended">
 			<h1 id="playerSessionScore" class="pull-left board span2">0</h1>				
 			<h2 id="playerPosition" class="pull-right reset">
-				<small class="h4">Position</small>
+				<small class="h4">Rank</small>
 				<span id="playerPositionMine">-</span> / <span id="playerPositionTotal" class="h4">-</span>
 			</h2>
 		</header>

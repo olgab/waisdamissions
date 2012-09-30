@@ -8,5 +8,9 @@
 		<class>nl.waisda.domain.TagEntry</class>
 		<class>nl.waisda.domain.ResetPassword</class>
 		<class>nl.waisda.domain.Participant</class>
+		<class>nl.waisda.domain.Mission</class>
+		<class>nl.waisda.domain.MissionVideo</class>
+		<class>nl.waisda.domain.MissionGame</class>
+		<class>nl.waisda.domain.MissionParticipant</class>
 	</persistence-unit>
 </persistence>

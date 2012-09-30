@@ -11,12 +11,12 @@
 
 <h1>Tag <span class="mark">${tagEntryStats.normalizedTag}</span></h1>
 
-<p>Voor het eerst gebruikt door
+<p>Used first by
 <a href="/profiel/${tagEntryStats.firstEntry.owner.id}">${tagEntryStats.firstEntry.owner.name}</a>
-bij <a href="/start-game/${tagEntryStats.firstEntry.game.video.id}">${tagEntryStats.firstEntry.game.video.title}</a>
-op ${tagEntryStats.firstEntry.prettyCreationDate}</p>
+during <a href="/start-game/${tagEntryStats.firstEntry.game.video.id}">${tagEntryStats.firstEntry.game.video.title}</a>
+on ${tagEntryStats.firstEntry.prettyCreationDate}</p>
 
-<h2 class="spaced">Fragmenten waarin <span class="mark">${tagEntryStats.normalizedTag}</span> voorkomt</h2>
+<h2 class="spaced">Clips featuring <span class="mark">${tagEntryStats.normalizedTag}</span></h2>
 <ul class="row equal-cols unstyled">
 	<c:forEach items="${tagEntryStats.videoStats}" var="vs">
 		<li class="span2">
@@ -29,7 +29,7 @@ op ${tagEntryStats.firstEntry.prettyCreationDate}</p>
 					<h3 class="h5">${vs.video.title}</h3>
 				</a>
 				<p class="small">
-					Ook getagd: <c:forEach items="${vs.topTags}" var="topTag" varStatus="topTagStatus"><a href="/tag/${topTag}" class="reset">${topTag}</a><c:if test="${topTagStatus.index < fn:length(vs.topTags) - 1}">, </c:if></c:forEach>
+					Also tagged: <c:forEach items="${vs.topTags}" var="topTag" varStatus="topTagStatus"><a href="/tag/${topTag}" class="reset">${topTag}</a><c:if test="${topTagStatus.index < fn:length(vs.topTags) - 1}">, </c:if></c:forEach>
 				</p>
 			</div>
 		</li>

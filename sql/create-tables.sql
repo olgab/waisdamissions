@@ -170,6 +170,69 @@ CREATE TABLE `Participant` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='A participating User in a Game; used to show player list';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `Mission`
+--
+
+DROP TABLE IF EXISTS `Mission`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Mission` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL COMMENT 'Mission title',
+  `description` varchar(255) NOT NULL COMMENT 'Mission description',
+  `start` datetime NOT NULL COMMENT 'Time at which the mission starts',
+  `end` datetime NOT NULL COMMENT 'Time at which the mission ends',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='A Mission';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `MissionGame`
+--
+
+DROP TABLE IF EXISTS `MissionGame`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MissionGame` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `mission_id` int(11) NOT NULL COMMENT 'Id of the mission',
+  `game_id` int(11) NOT NULL COMMENT 'Id of the game',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Connects a mission to a game';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `MissionParticipant`
+--
+
+DROP TABLE IF EXISTS `MissionParticipant`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MissionParticipant` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `mission_id` int(11) NOT NULL COMMENT 'Id of the mission',
+  `participant_id` int(11) NOT NULL COMMENT 'Id of the participant',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Connects a mission to a articipant';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `MissionVideo`
+--
+
+DROP TABLE IF EXISTS `MissionVideo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MissionVideo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `mission_id` int(11) NOT NULL COMMENT 'Id of the mission',
+  `video_id` int(11) NOT NULL COMMENT 'Id of the video',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Connects a mission to a video';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

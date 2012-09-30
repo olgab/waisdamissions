@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import nl.waisda.domain.Mission;
 import nl.waisda.domain.User;
 import nl.waisda.model.Channel;
+import nl.waisda.services.MissionService;
 import nl.waisda.services.UserSessionService;
 import nl.waisda.services.VideoService;
 
@@ -30,10 +32,15 @@ public class HomeController {
 	@Autowired
 	private VideoService videoService;
 	
+	@Autowired
+	private MissionService missionService;
+	
 	@RequestMapping(value = { "/", "/index.html" })
 	public String home(@RequestParam(defaultValue = "1", required = false) int page, ModelMap model, HttpSession session) {
 		List<Channel> channels = videoService.getChannelContent();
+		List<Mission> missions = missionService.getMissions();
 		model.addAttribute("channels", channels);
+		model.addAttribute("missions", missions);
 		model.addAttribute("cssClass", "home");
 		
 		return "home";

@@ -40,35 +40,35 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><strong><nf:format number="${recap.summary.countDictionaryMatches}"/></strong> ${recap.summary.countDictionaryMatches == 1 ? 'dictionary match' : 'dictionary matches' } <span class="help" title="A dictionarymatch will earn you 25 points">?</span></td>
+							<td><strong><nf:format number="${recap.summary.countDictionaryMatches}"/></strong> ${recap.summary.countDictionaryMatches == 1 ? 'dictionary match' : 'dictionary matches' } <span class="help" title="A dictionary match will earn you 25 points">?</span></td>
 							<td class="text-right"><nf:format number="${recap.summary.countDictionaryMatches * 25}" /></td>
 						</tr>
 						<tr>
-							<td><img src="/static/img/match-social.png" title="match with other player" /></td>
+							<td><img src="/static/img/match-social.png" alt="match with other player" /></td>
 							<td><strong><nf:format number="${recap.summary.countMatchingTags}"/></strong> ${recap.summary.countMatchingTags == 1 ? 'match' : 'matches' } with other players <span class="help" title="Entering the same tag as one of your co-players will earn you 50 points">?</span></td>
 							<td class="text-right"><nf:format number="${recap.summary.countMatchingTags * 50}" /></td>
 						</tr>
 						<tr>
-							<td><img src="/static/img/match-pioneer.png" title="door uw ge�ntroduceerde match" /></td>
+							<td><img src="/static/img/match-pioneer.png" alt="Pioneer match" /></td>
 							<td><strong><nf:format number="${recap.summary.countPioneerTags}"/></strong> ${recap.summary.countPioneerTags == 1 ? 'pioneer match' : 'pioneer matches' } <span class="help" title="If you were the first to enter a word then the first match will earn you 145 points">?</span></td>
 							<td class="text-right"><nf:format number="${recap.summary.countPioneerTags * 100}" /></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td><strong>Points total</strong></td>
+							<td><strong>Total score</strong></td>
 							<td class="text-right"><nf:format number="${recap.ownerScore}" /></td>
 						</tr>
 					</table>
-					<p class="small spaced-min">On the right, below 'Your tags', you can find a more detailed description of every match.</p>
+					<p class="small spaced-min">On the right, below 'Your tags', you can find a more detailed description of each match.</p>
 					
-					<h3>Earn more points?</h3>
-					<p>Challenge friends and improve your changes to a higher score <span class="help" title="If you were the first to enter a word then the first match will earn you 145 points">?</span></p>
+					<h3>Want to earn even more points?</h3>
+					<p>Challenge your friends and improve your chances at a higher score <span class="help" title="If you were the first to enter a word then the first match will earn you 145 points">?</span></p>
 
 					<!-- AddThis Button BEGIN -->
 					<div id="addthis-bar" class="addthis_toolbox addthis_default_style spaced reserved-space" 
 					addthis:url="http://waisda.nl/start-game/${recap.game.video.id}"
-					addthis:title="Ik heb zojuist ${recap.ownerScore} punten behaald door ${fn:length(recap.tagEntries)} ${fn:length(recap.tagEntries) == 1 ? 'woord' : 'woorden'} aan &quot;${recap.game.video.title}&quot; toe te voegen #woordentikkertje"
-					addthis:description="Speelt u mee?">
+					addthis:title="I just scored ${recap.ownerScore} points by adding ${fn:length(recap.tagEntries)} ${fn:length(recap.tagEntries) == 1 ? 'word' : 'words'} to &quot;${recap.game.video.title}&quot; #woordentikkertje"
+					addthis:description="Do you want to play?">
 						<a class="addthis_button_preferred_1"></a>
 						<a class="addthis_button_preferred_2"></a>
 						<a class="addthis_button_preferred_3"></a>
@@ -109,7 +109,7 @@
 		<header class="rich extended">
 			<h1 id="playerSessionScore" class="pull-left board span2"><nf:format number="${recap.ownerScore}"/></h1>				
 			<h2 id="playerPosition" class="pull-right reset">
-				<small class="h4">Position</small>
+				<small class="h4">Rank</small>
 				<span id="playerPositionMine">${recap.ownerPosition + 1}</span> / <span id="playerPositionTotal" class="h4">${fn:length(recap.participants)}</span>
 			</h2>
 		</header>
@@ -125,6 +125,9 @@
 						</c:if>
 						<c:if test="${tag.matchingTagEntry != null && !tag.pioneer}">
 							<img src="/static/img/match-social.png" class="icon" />
+						</c:if>
+						<c:if test="${tag.dictionary != null}">
+							<img src="/static/img/match-dictionary.png" class="icon" />
 						</c:if>
 						<span><c:out value="${tag.tag}"/></span>
 						<span class="matching small">
