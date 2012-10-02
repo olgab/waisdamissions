@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import nl.waisda.domain.Game;
 import nl.waisda.domain.Mission;
 import nl.waisda.domain.MissionState;
 import nl.waisda.domain.User;
@@ -62,8 +63,8 @@ public class MissionController {
         final Mission mission = missionService.getMissionById(missionId);
         final Video video = videoService.getVideoById(videoId);
         final User user = userSessionService.requireCurrentUser(session);
-        missionService.joinMission(mission, user, video);
-        return "mission";
+        Game game = missionService.joinMission(mission, user, video);
+        return "redirect:/game/" + game.getId();
     }
 
     public void setMissionService(final MissionService missionService) {

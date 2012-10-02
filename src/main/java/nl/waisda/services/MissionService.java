@@ -48,7 +48,7 @@ public class MissionService {
         return missionVideoRepo.getVideosForMission(missionId);
     }
 
-    public void joinMission(final Mission mission, final User user, final Video video) throws NotFoundException {
+    public Game joinMission(final Mission mission, final User user, final Video video) throws NotFoundException {
         final Game game = gameService.createGame(user, video);
 
         final MissionParticipant missionParticipant = new MissionParticipant();
@@ -67,6 +67,8 @@ public class MissionService {
 
         missionGameRepo.store(missionGame);
         missionParticipantRepo.store(missionParticipant);
+        
+        return game;
     }
     
     public List<Mission> getMissions() {
