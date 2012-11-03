@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import org.hibernate.annotations.Formula;
 
 @Entity
-public class Video {
+public class Video implements Comparable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,6 +33,9 @@ public class Video {
 
 	@Formula("(SELECT COUNT(*) FROM Game g WHERE g.video_id = id)")
 	private int timesPlayed;
+	
+	@Formula("(SELECT COUNT(g.video_id) FROM TagEntry te JOIN Game g ON te.game_id = g.id WHERE g.video_id = id AND te.matchingTagEntry_id IS NOT NULL)")
+	private int numberOfTags;
 
 	@Enumerated(EnumType.STRING)
 	private PlayerType playerType;
@@ -95,6 +98,15 @@ public class Video {
 
 	public String getPrettyDuration() {
 		return TagEntry.getFriendlyTime(duration);
+	}
+	
+	public boolean isTagComplete() {
+		return numberOfTags >= duration / 20000;
+	}
+
+	@Override
+	public int compareTo(Object other) {
+		return this.numberOfTags - ((Video)other).numberOfTags;
 	}
 
 }

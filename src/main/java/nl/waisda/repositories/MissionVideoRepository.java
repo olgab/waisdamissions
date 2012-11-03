@@ -1,5 +1,6 @@
 package nl.waisda.repositories;
 
+import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.TypedQuery;
@@ -27,6 +28,8 @@ public class MissionVideoRepository extends AbstractRepository<MissionVideo> {
 				"WHERE mv.mission.id = :missionId",
 				Video.class);
 		query.setParameter("missionId", missionId);
+		List<Video> videos = query.getResultList();
+		Collections.sort(videos);
 		return query.getResultList();
 	}
 }
