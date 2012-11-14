@@ -101,7 +101,7 @@ public class Video implements Comparable{
 	}
 	
 	public boolean isTagComplete() {
-		return numberOfTags >= duration / 20;
+		return numberOfTags / 2 >= duration / 20;
 	}
 
 	@Override
