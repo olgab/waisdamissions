@@ -30,6 +30,6 @@ public class MissionVideoRepository extends AbstractRepository<MissionVideo> {
 		query.setParameter("missionId", missionId);
 		List<Video> videos = query.getResultList();
 		Collections.sort(videos);
-		return query.getResultList();
+		return videos;
 	}
 }
